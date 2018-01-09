@@ -1,0 +1,20 @@
+{
+  "name": "bodypoise.co.uk",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./index"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^6.1.4",
+    "body-parser": "~1.18.2",
+    "compression": "^1.7.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "express-error-handler": "^1.1.0",
+    "helmet": "^3.9.0",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5"
+  }
+}
