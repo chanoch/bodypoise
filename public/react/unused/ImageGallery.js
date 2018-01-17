@@ -1,15 +1,24 @@
-class Logos extends React.PureComponent {
+/**
+ *  <ImageGallery title="Most insurances accepted" />
+ * 
+ * Currently this will show a static list of logos 
+ * - with blank links
+ * - no alt text
+ * - className of insurance-logo
+ */
+class ImageGallery extends React.PureComponent {
     constructor(props) {
         super(props);
     }
 
     render() {
+        const {title} = this.props;
         return (
 <div className="section-space">
   <div className="container">
     <div className="row">
       <div className="col-md-offset-2 col-md-8 section-title text-center">
-        <h1>Most insurance accepted</h1>
+        <h1>{title}</h1>
       </div>
     </div>
     <div className="row">
