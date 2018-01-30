@@ -25,7 +25,6 @@
 	- Section Color Bg
 	- Section Title
 + List Bullet
-+ Page Header
 + Template Header
 + Header Navigation
 
@@ -170,16 +169,6 @@ p:last-child{margin-bottom: 0px;}
 .bdr-top-thik{border-top: 2px solid #74b281;}
 .padding-top60{padding-top: 60px;}
 .main-container{padding-top: 80px; padding-bottom: 80px;}
-/*---------------- Header -----------------*/
-.header{padding-top: 40px; padding-bottom: 40px;}
-.header-logo{}
-.header-text{    padding-top: 14px;
-    font-size: 14px;
-    font-weight: 600;color: #484b49; text-align: right;}
-.text-call, .text-email, .text-hours{padding-right: 20px;}
-.text-call{}
-.text-email{}
-.text-hours{}
 .search{}
 .navigation{background-color: #1f7b76;border-bottom: 4px solid #74b281; position: relative;z-index: 9;}
 #navigation,
@@ -682,9 +671,6 @@ padding-bottom: 8px; margin-bottom: 20px;}
 
 /*============= media query =============*/
 @media only screen and (max-width: 768px) {
-	.header{padding-top: 20px; padding-bottom: 20px;}
-	 .header-logo{text-align: center;margin-bottom: 10px;}
-	 .text-hours{display: none;}
 	 #navigation > ul > li > a {
          padding: 20px 10px 20px 30px;
     font-size: 13px;

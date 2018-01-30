@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class TelephoneLink extends React.Component {
+export default class PhoneLink extends React.Component {
     constructor(props) {
         super(props);
     }

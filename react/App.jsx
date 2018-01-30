@@ -1,10 +1,10 @@
 import React from 'react';
 
-import EmailLink from './components/email/EmailLink.jsx';
-import TelephoneLink from './components/phone/TelephoneLink.jsx';
-import ImageLink from './components/image/ImageLink.jsx';
+import EmailLink from './components/EmailLink';
+import TelephoneLink from './components/PhoneLink';
+import Link from './components/Link';
 
-import Header from './components/Header.jsx';
+import Header from './sections/Header';
 
 import AboutBlock from './AboutBlock.jsx';
 import BackToTop from './BackToTop.jsx';
@@ -34,10 +34,7 @@ export default class App extends React.Component {
 
 <div>
      <Header>
-        <ImageLink  link="/" 
-                    title="Body Poise Home Page" 
-                    src="images/logo.png"
-                    altText="Body Poise Logo" />        
+        <Link link="/"><h1>BodyPoise</h1></Link>
         <EmailLink email="heather@bodypoise.co.uk" subject="General Query"/>
         <TelephoneLink number="07886 407 274" />        
     </Header>

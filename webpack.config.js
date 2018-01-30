@@ -19,9 +19,10 @@ module.exports = {
         chunkFilename: '[name].chunk.js'
     },
     module: {
-        loaders: [
-           { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
-        ]
+        rules: [
+            { test: /\.css$/, use: [ 'style-loader', 'css-loader' ] },
+            { test: /\.js.?$/, loader: 'babel-loader', exclude: /node_modules/ },
+        ],
     },
     plugins: [
         // new BundleAnalyzerPlugin({
