@@ -1,10 +1,10 @@
 import React from 'react';
 
-import EmailLink from './EmailLink.jsx';
-import TelephoneLink from './TelephoneLink.jsx';
-import ImageLink from './ImageLink.jsx';
+import EmailLink from './components/email/EmailLink.jsx';
+import TelephoneLink from './components/phone/TelephoneLink.jsx';
+import ImageLink from './components/image/ImageLink.jsx';
 
-import Header from './Header.jsx';
+import Header from './components/Header.jsx';
 
 import AboutBlock from './AboutBlock.jsx';
 import BackToTop from './BackToTop.jsx';

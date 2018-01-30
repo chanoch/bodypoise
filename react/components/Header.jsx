@@ -1,6 +1,9 @@
 import React from 'react';
 
 import ComponentWithChildren from './ComponentWithChildren.jsx';
+import ImageLink from './image/ImageLink.jsx';
+import EmailLink from './email/EmailLink.jsx';
+import TelephoneLink from './phone/TelephoneLink.jsx';
 
 export default class Header extends ComponentWithChildren {
     constructor(props) {

@@ -1,16 +1,23 @@
+create header
+create slider component with css
 remove js
  - implement css slider
  - replace menu
  - reactify back to top 
-move from index.r.html to index.html
 Add in content
 favicon
 add in other pages
 contact us
 ga
+Configure nginx for front proxy
 
+Story book https://github.com/storybooks/storybook
+Css with webpack https://www.bensmithett.com/smarter-css-builds-with-webpack/
+Postcss
+Strapi? https://github.com/strapi/strapi
 
 
 review webpack rules DONE
 Set up js imports DONE
 set up chunks DONE
+move from index.r.html to index.html DONE
