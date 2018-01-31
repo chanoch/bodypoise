@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './calltoaction.css';
+
 export default class CallToAction extends React.PureComponent {
     constructor(props) {
         super(props);

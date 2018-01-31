@@ -1,0 +1,12 @@
+.feature{margin-bottom: 30px;}
+.feature-icon{color: #74b281;  margin-bottom: 30px;}
+.icon-large{font-size: 52px;}
+.icon-medium{font-size: 42px;}
+.feature-inner{padding: 40px;}
+.feature-bg{}
+.feature-content{}
+.feature-left{}
+.feature-left .feature-icon{float: left;}
+.feature-left .feature-content{padding-left: 60px; text-align: left;}
+
+.feature-center{text-align: center;}

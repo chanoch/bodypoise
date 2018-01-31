@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './navigation.css';
+
 export default class Navigation extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -17,6 +19,7 @@ export default class Navigation extends React.PureComponent {
                         <div className="col-md-12">
                             <div id="navigation">
                             <ul>
+{/*}
                                 <li className="active"><a href="index.html" title="Home">Home</a></li>
                                 <li><a href="about-us-1.html" title="About us" className="animsition-link">About</a>
                                 <ul>
@@ -79,6 +82,7 @@ export default class Navigation extends React.PureComponent {
                                     <li><a href="location.html" title="Location" className="animsition-link">Location</a></li>
                                 </ul>
                                 </li>
+        */}
                             </ul>
                             </div>
                         </div>

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './about.css';
+
 export default class AboutBlock extends React.PureComponent {
     constructor(props) {
         super(props);

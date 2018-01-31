@@ -1,6 +1,8 @@
 import React from 'react';
 
-export default class TinyFooter extends React.Component {
+import './copyright.css'
+
+export default class Copyright extends React.Component {
     constructor(props) {
         super(props);
     }

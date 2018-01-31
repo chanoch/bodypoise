@@ -1,0 +1,25 @@
+{
+    "title": "Why choose me?",
+    "description":"My passion is to treat the whole person and not just the pain area. I work with you towards your goals and to develop tools to take control of your life.",
+    "features": [{
+        "id": 1,
+        "icon":"icon-coffee-cup",
+        "title":"Quality Care",
+        "description": "Providing a friendly and professional service, I specialise in supporting those with long term conditions."
+    }, {
+        "id": 2,
+        "icon":"icon-document",
+        "title":"Certifications",
+        "description":"I am a fully qualified physiotherapist with post graduate certification in acupuncture and a pilates instructor."
+    }, {
+        "id": 3,
+        "icon":"icon-avatar",
+        "title":"One to One Sessions",
+        "description": "For those with special requirements, I can provide one-to-one guidance and personalised service."
+    }, {
+        "id": 4,
+        "icon":"icon-calendar",
+        "title":"Regular Classes",
+        "description":"I run weekly pilates sessions at a convenient location. Get in contact for more information."
+    }]
+}

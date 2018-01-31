@@ -1,15 +1,22 @@
-create header
+Fix style for phone link in footer
+populate home page
+Configure nginx for front proxy
+release
+
 create slider component with css
 remove js
  - implement css slider
  - replace menu
  - reactify back to top 
-Add in content
 favicon
+webpack - copy static resources
 add in other pages
+Add in remaining content
+Update menu
 contact us
 ga
-Configure nginx for front proxy
+Add in editable pilates sessions
+
 
 Story book https://github.com/storybooks/storybook
 Css with webpack https://www.bensmithett.com/smarter-css-builds-with-webpack/
@@ -21,3 +28,9 @@ review webpack rules DONE
 Set up js imports DONE
 set up chunks DONE
 move from index.r.html to index.html DONE
+
+create header DONE
+Placeholder menu for one pager release DONE
+Fix top margin in FeatureList DONE
+Fix logo size in feature list DONE
+Move featurelist to json data DONE

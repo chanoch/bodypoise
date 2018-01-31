@@ -1,32 +1,36 @@
 import React from 'react';
 
 import EmailLink from './components/EmailLink';
-import TelephoneLink from './components/PhoneLink';
+import PhoneLink from './components/PhoneLink';
 import Link from './components/Link';
 
+import About from './sections/About';
 import Header from './sections/Header';
+import Navigation from './sections/Navigation';
+import Footer from './sections/Footer';
+import Copyright from './sections/Copyright';
+import Services from './sections/Services';
+import Declaration from './sections/Declaration';
+import FeatureList from './sections/Features';
+import Feature from './sections/Features/Feature';
 
-import AboutBlock from './AboutBlock.jsx';
-import BackToTop from './BackToTop.jsx';
-import BdrTop from './BdrTop.jsx';
-import CallToAction from './CallToAction.jsx';
-import FeatureList from './FeatureList.jsx';
-import FeatureBlock from './FeatureBlock.jsx';
-import Navigation from './Navigation.jsx';
+// data
+import global from './data/global.json';
+import benefits from './data/benefits.json';
+import services from './data/services.json';
+import declaration from './data/declaration.json';
+
+// styles
+import CallToAction from './sections/CallToAction'; // reversable style
+
+// TODO
 import Slider from './Slider.jsx';
-import SectionSpace from './SectionSpace.jsx';
-import Services from './Services.jsx';
-
-import Footer from './Footer.jsx';
-import TinyFooter from './TinyFooter.jsx';
+import BackToTop from './BackToTop.jsx';
 
 export default class App extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            context: props.context,
-        } 
+        context: props.context;
     }
 
     render() {
@@ -34,74 +38,32 @@ export default class App extends React.Component {
 
 <div>
      <Header>
-        <Link link="/"><h1>BodyPoise</h1></Link>
-        <EmailLink email="heather@bodypoise.co.uk" subject="General Query"/>
-        <TelephoneLink number="07886 407 274" />        
+        <Link link="/"><h1>BodyPoise</h1><h2>{global.strapline}</h2></Link>
+        <EmailLink email={global.email} subject={global.emailSubject}/>
+        <PhoneLink number={global.phone} />        
     </Header>
     <Navigation />
-    <Slider />
-    <FeatureList title="Daily health care assistance" 
-                 description="We are one of the leading providers of domiciliary care and health care staffing services.">
-        <FeatureBlock icon="icon-medical-records"
-                        title="Residential Care" > 
-            Get helpful tips on what to look for when touring residential care facilities.
-        </FeatureBlock>
-        <FeatureBlock icon="icon-drugs-3"
-                        title="Urgent Care at Home">
-            Provides convenient walk-in services for individuals of all ages.
-        </FeatureBlock>
-        <FeatureBlock icon="icon-first-aid-kit"
-                        title="Home Live in care">
-            Many families struggle to make decisions about the best living situation for their aging.
-        </FeatureBlock>
-    </FeatureList>
-    <Services />
-    <SectionSpace />
 
-    <BdrTop>
-        <AboutBlock title="Who we are" 
-                    link="team-listing.html" 
-                    linkText="Meet The Team">
-            More than 20 years of providing innovative solutions that improve health and
-            quality of life for those in need of in-home health services. 
-            <strong>Staff on call 24 hours a day</strong>, 
-            seven days a week, to help ensure continuity.
-        </AboutBlock>
-        <AboutBlock title="What we offer" 
-                    link="service-listing-image.html"
-                    linkText="View Services">
-            Service is focused on patients and <strong>dedicated to delivering quality     
-            patient care</strong> and service—all supported by a nationwide network of 
-            experienced healthcare professionals and staff.
-        </AboutBlock>
-    </BdrTop>
+    {/*<Slider />*/}    
+    <FeatureList title={services.title} 
+                 description={services.description}
+                 classes="section-color"
+                 features={services.features} />
+    {/* <Services /> */}
 
-    <FeatureList title="Why choose our health care" 
-                 description="More than 20 years of providing innovative solutions that improve health and quality of life."
-                 classes="section-color">
-        <FeatureBlock icon="icon-coffee-cup"
-                        title="Quality Care" > 
-            Health care center providing quality care for the elderly, children, adult.
-        </FeatureBlock>
-        <FeatureBlock icon="icon-document"
-                        title="Certified Healthcare" > 
-            Health care is Licensing and Certification is a unit in the Division of Health Care Services.
-        </FeatureBlock>
-        <FeatureBlock icon="icon-avatar"
-                        title="Professional Staff"> 
-            Professionals and Experienced staff provide the most timely &amp; efficient services possible.
-        </FeatureBlock>
-        <FeatureBlock icon="icon-calendar"
-                        title="24 Hours a Day" > 
-            Safe environments with friendly and professional teams of highly trained staff 24 hours a day
-        </FeatureBlock>
-    </FeatureList>
+    <Declaration heading={declaration.heading} text={declaration.text}/>
 
-    <CallToAction link="contact-us.html" buttonText="Contact Us">
-        Do You Need Private Home Care Specialists? Call +1 800 234 5678
+    <FeatureList title={benefits.title} 
+                 description={benefits.description}
+                 classes="section-color"
+                 features={benefits.features}/>
+    {/* <About /> */}
+
+    <CallToAction link={"mailto:"+global.email} buttonText="Email">
+        {global.callToAction} Ring on <PhoneLink number={global.phone} /> or
     </CallToAction>
     <Footer />
-    <TinyFooter>@ 2018 Body Poise. All Reserved.</TinyFooter>
+    <Copyright>{global.copyright}</Copyright>
     <BackToTop />
 </div>
 

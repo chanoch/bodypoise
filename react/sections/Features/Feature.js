@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default class FeatureBlock extends React.Component {
+export default class Feature extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        const {title, children, icon, iconSize, blockSize} = this.props;
+        const {title, children, icon, iconSize, description, blockSize} = this.props.feature;
         const icons = iconSize + " " + icon;
         const featureClasses = "feature feature-centre " + blockSize;
         return (
@@ -14,7 +14,7 @@ export default class FeatureBlock extends React.Component {
                 <div className="feature-icon"><i className={icons}></i></div>
                     <div className="feature-content">
                         <h2>{title}</h2>
-                        <p>{children}</p>
+                        <p>{description}</p>
                     </div>
             </div>
         )

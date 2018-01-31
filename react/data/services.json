@@ -1,0 +1,20 @@
+{
+    "title": "Pilates for your body and mind",
+    "description":"A trained and experienced physiotherapist, I specialise in Pilates exercises for building core muscles.",
+    "features": [{
+        "id": 1,
+        "icon": "icon-medical-records",
+        "title":"Pregnancy and post-natal Pilates",
+        "description": "I have developed exercise routines specifically aimed at pregnant women and new mothers."
+    }, {
+        "id": 2,
+        "icon":"icon-drugs-3",
+        "title":"Pain Management",
+        "description": "Pilates can help with joint pain, chronic pain, Fibromyalgia, and sports injury."
+    }, {
+        "id": 3,
+        "icon":"icon-like",
+        "title":"Stress management",
+        "description": "The focus and percision of movement can help with stress through relaxation and meditation."
+    }]
+}

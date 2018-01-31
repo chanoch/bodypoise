@@ -11,7 +11,6 @@ module.exports = {
     entry: {
         vendor: ['react', 'react-dom', 'axios'],
         index: './react/index.jsx',
-//        contact: './react/contact.jsx'
     },
     output: {
         path: path.join(__dirname, 'dist/public'),
@@ -22,6 +21,7 @@ module.exports = {
         rules: [
             { test: /\.css$/, use: [ 'style-loader', 'css-loader' ] },
             { test: /\.js.?$/, loader: 'babel-loader', exclude: /node_modules/ },
+            { test: /\.json$/, loader: 'json-loader' }
         ],
     },
     plugins: [

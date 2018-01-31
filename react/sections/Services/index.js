@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './service.css';
+
 export default class Services extends React.PureComponent {
     constructor(props) {
         super(props);

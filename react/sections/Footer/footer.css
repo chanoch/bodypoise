@@ -1,0 +1,20 @@
+/*---------------- footer ---------------*/
+.footer{background-color: #2f3330;padding-top: 80px; padding-bottom: 80px; color: #6a716c;}
+.footer-widget{}
+.footer-widget-title{color: #bfc4c0;}
+.footer-widget ul{}
+.footer-widget ul li{margin-bottom: 10px;}
+.footer-widget ul li a{color: #6a716c;}
+.footer-widget ul li a:hover{color: #6ca578;}
+.footer-newsletter-section{margin-top: 60px;}
+.newsletter-widget{}
+.newsletter-widget .form-control{background-color: #383c39; border-color: #383c39;}
+.newsletter-widget .form-control:focus {border-color: #282c29; outline: 0;
+	-webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,.075), 0 0 2px rgba(0,0,0,.6);
+	box-shadow: inset 0 0px 0px rgba(0,0,0,.075), 0 0 2px rgba(0,0,0,.6);}
+.footer-social-widget {}
+.footer-social-widget ul{}
+.footer-social-widget ul li{float: left; margin-right: 10px;}
+.footer-social-widget  ul li a {background-color: #383c39; padding: 16px 18px; border-radius: 4px; color: #6a716c;
+	display: inline-block; line-height: 0;}
+.footer-social-widget ul li a:hover {background-color: #74b281;   border-radius: 4px; color: #fff;}

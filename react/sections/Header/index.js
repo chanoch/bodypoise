@@ -2,7 +2,7 @@ import React from 'react';
 
 import ComponentWithChildren from '../../ComponentWithChildren';
 
-require('./index.css')
+require('./header.css')
 
 export default class Header extends ComponentWithChildren {
     constructor(props) {

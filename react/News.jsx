@@ -7,6 +7,21 @@ export default class News extends React.PureComponent {
 
     render() {
         return (
+            {/**
+                .meta{font-size: 13px; font-weight: 600; text-transform: uppercase; border-top: 2px solid #ebece5;border-bottom: 2px solid #ebece5;padding-top: 8px;
+padding-bottom: 8px; margin-bottom: 20px; position: relative;}
+.meta-comments, .meta-author, .meta-tag{padding-right: 20px;}
+.meta-comments i, .meta-tag i{padding-right: 10px;color: #74b281;}
+.meta-date-bg{background-color: #1f7b76; text-transform: uppercase; padding: 2px 10px; font-size: 14px;
+    font-weight: 600; position: absolute; bottom: 10px; left: 10px;}
+.meta-date-bg .meta-date{color: #fff;}
+.meta-date{}
+.meta-author{}
+.meta-tag{}
+.meta-link{}
+
+                 */
+            }
 <div className="section-space">
   <div className="container">
     <div className="row">
