@@ -197,20 +197,6 @@ padding-bottom: 8px; margin-bottom: 20px;}
 .blurb{border-bottom: 1px solid #eee; margin-bottom: 29px;}
 .lead{font-size: 21px; line-height: 35px; font-weight: 400;}
 
-/********** Extra Plugin CSS - Back to top **********/
-
-.cd-top {display: inline-block; height: 40px; width: 40px; position: fixed; bottom: 40px; right: 10px;
-	overflow: hidden; text-indent: 100%; white-space: nowrap; background: rgba(31, 123, 118, 100) url(../images/cd-top-arrow.svg) no-repeat center 50%; visibility: hidden; opacity: 0; 
-	-webkit-transition: opacity .3s 0s, visibility 0s .3s; -moz-transition: opacity .3s 0s, visibility 0s .3s;
- transition: opacity .3s 0s, visibility 0s .3s;}
-.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
- -webkit-transition: opacity .3s 0s, visibility 0s 0s; -moz-transition: opacity .3s 0s, visibility 0s 0s;
- transition: opacity .3s 0s, visibility 0s 0s;}
-.cd-top.cd-is-visible {	/* the button becomes visible */ visibility: visible; opacity: 1;}
-.cd-top.cd-fade-out {
-	/* if the user keeps scrolling down, the button is out of focus and becomes less visible */
-	opacity: .5;}
-.no-touch .cd-top:hover {background-color: #cb2529; opacity: 1;}
 
 
 .sticky-icon{background: url(../images/sticky-icon.png) no-repeat; width: 20px; height: 20px; position: absolute;

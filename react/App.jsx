@@ -22,10 +22,10 @@ import declaration from './data/declaration.json';
 
 // styles
 import CallToAction from './sections/CallToAction'; // reversable style
+import BackToTop from './components/BackToTop';
 
 // TODO
 import Slider from './Slider.jsx';
-import BackToTop from './BackToTop.jsx';
 
 export default class App extends React.Component {
     constructor(props) {

@@ -1,5 +1,9 @@
 import React from 'react';
 
+import ScrollToTop from 'react-scroll-up';
+
+import './backtotop.css';
+
 export default class BackToTop extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -7,7 +11,9 @@ export default class BackToTop extends React.PureComponent {
 
     render() {
         return (
-            <a href="#0" className="cd-top" title="Go to top">Top</a> 
+            <ScrollToTop showUnder={160}>
+                <div className="cd-top"></div> 
+            </ScrollToTop>
         )
     }
 }

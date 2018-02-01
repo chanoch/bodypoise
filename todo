@@ -1,8 +1,9 @@
-Fix style for phone link in footer
-populate home page
-Configure nginx for front proxy
-release
+about
+check redirect from 80 to 443 - compare with virtualassure
+ga
 
+Fix style for phone link in footer
+navigation
 create slider component with css
 remove js
  - implement css slider
@@ -14,7 +15,6 @@ add in other pages
 Add in remaining content
 Update menu
 contact us
-ga
 Add in editable pilates sessions
 
 
@@ -34,3 +34,9 @@ Placeholder menu for one pager release DONE
 Fix top margin in FeatureList DONE
 Fix logo size in feature list DONE
 Move featurelist to json data DONE
+populate home page DONE
+Configure nginx for front proxy DONE
+first release DONE
+add ssl DONE
+remap dns to aws? DONE
+Add scroll to top DONE
