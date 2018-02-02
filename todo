@@ -1,22 +1,28 @@
+navigation
+Express handling of error event
+Check how google analytics works with SPA
+Then fix all URLs routed to react page
+Fix style for phone link in footer
+webpack dev server? get rid of npm start in dev?
+README.md
+remove js
+ - implement css slider
+ - replace menu
+favicon
+mobile optimisation
 about
 check redirect from 80 to 443 - compare with virtualassure
 ga
 
-Fix style for phone link in footer
-navigation
+logger(dev)
 create slider component with css
-remove js
- - implement css slider
- - replace menu
- - reactify back to top 
-favicon
-webpack - copy static resources
 add in other pages
 Add in remaining content
 Update menu
 contact us
 Add in editable pilates sessions
-
+Google ads
+Facebook ads
 
 Story book https://github.com/storybooks/storybook
 Css with webpack https://www.bensmithett.com/smarter-css-builds-with-webpack/
@@ -40,3 +46,4 @@ first release DONE
 add ssl DONE
 remap dns to aws? DONE
 Add scroll to top DONE
+webpack - copy static resources DONE

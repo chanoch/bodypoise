@@ -9,8 +9,6 @@ var compression = require('compression');
 
 var ErrorHandler = require('express-error-handler');
 
-var index = require('./routes/index');
-
 var app = express();
 // app.use(compression);
 
@@ -18,7 +16,6 @@ var app = express();
 // app.use(favicon(path.join(__dirname, 'public', '/assets/img/bp_favicon.png')));
 app.use(logger('dev'));
 app.use(helmet());
-app.set('views', path.join(__dirname, '../dist/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -31,10 +28,11 @@ app.use(function(req, res, next) {
       next();
 });
 
-console.log(path.join(__dirname, '../dist/public'));
-app.use(express.static(path.join(__dirname, '../dist/public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
-app.use('/', index);
+app.use('*', function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
