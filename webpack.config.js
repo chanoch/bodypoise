@@ -1,5 +1,6 @@
 const path = require('path');
 var { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var webpack = require('webpack');
 
 var noVisualization = process.env.NODE_ENV === 'production' 
@@ -10,7 +11,7 @@ module.exports = {
     watch: true,
     entry: {
         vendor: ['react', 'react-dom', 'axios'],
-        index: './react/index.jsx',
+        index: './src/react/index.jsx',
     },
     output: {
         path: path.join(__dirname, 'dist/public'),
@@ -34,6 +35,13 @@ module.exports = {
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest'
-        })
+        }),
+        new CopyWebpackPlugin([{
+            from: 'src/public',
+            to:   '../public'
+        },{
+            from: 'src/server',
+            to:   '../server'
+        }])
     ]
 }

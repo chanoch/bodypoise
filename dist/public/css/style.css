@@ -197,11 +197,6 @@ padding-bottom: 8px; margin-bottom: 20px;}
 .blurb{border-bottom: 1px solid #eee; margin-bottom: 29px;}
 .lead{font-size: 21px; line-height: 35px; font-weight: 400;}
 
-
-
-.sticky-icon{background: url(../images/sticky-icon.png) no-repeat; width: 20px; height: 20px; position: absolute;
-    right: 0; top: 12px;}
-
     /*----- quote -----*/
 
 blockquote{border-left: 0px; padding: 30px 0; border-bottom:4px solid #ebece5;
