@@ -150,7 +150,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(80);
+var	fixUrls = __webpack_require__(78);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -502,19 +502,19 @@ var _Link = __webpack_require__(30);
 
 var _Link2 = _interopRequireDefault(_Link);
 
-var _Header = __webpack_require__(76);
+var _Header = __webpack_require__(79);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Navigation = __webpack_require__(81);
+var _Navigation = __webpack_require__(83);
 
 var _Navigation2 = _interopRequireDefault(_Navigation);
 
-var _Footer = __webpack_require__(84);
+var _Footer = __webpack_require__(87);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _Copyright = __webpack_require__(87);
+var _Copyright = __webpack_require__(90);
 
 var _Copyright2 = _interopRequireDefault(_Copyright);
 
@@ -522,7 +522,7 @@ var _global = __webpack_require__(31);
 
 var _global2 = _interopRequireDefault(_global);
 
-var _BackToTop = __webpack_require__(90);
+var _BackToTop = __webpack_require__(93);
 
 var _BackToTop2 = _interopRequireDefault(_BackToTop);
 
@@ -549,6 +549,8 @@ var HomePage = function (_React$Component) {
     _createClass(HomePage, [{
         key: 'render',
         value: function render() {
+            var active = this.props.active;
+
             return _react2.default.createElement(
                 'div',
                 null,
@@ -557,14 +559,14 @@ var HomePage = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         _Link2.default,
-                        { link: '/' },
+                        { href: '/', title: 'Body Poise Home' },
                         _react2.default.createElement(
                             'h1',
                             null,
                             'BodyPoise'
                         ),
                         _react2.default.createElement(
-                            'h2',
+                            'h3',
                             null,
                             _global2.default.strapline
                         )
@@ -572,7 +574,7 @@ var HomePage = function (_React$Component) {
                     _react2.default.createElement(_EmailLink2.default, { email: _global2.default.email, subject: _global2.default.emailSubject }),
                     _react2.default.createElement(_PhoneLink2.default, { number: _global2.default.phone })
                 ),
-                _react2.default.createElement(_Navigation2.default, null),
+                _react2.default.createElement(_Navigation2.default, { active: active }),
                 this.props.children,
                 _react2.default.createElement(_Footer2.default, null),
                 _react2.default.createElement(
@@ -834,6 +836,8 @@ var _History = __webpack_require__(26);
 
 var _History2 = _interopRequireDefault(_History);
 
+__webpack_require__(76);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -855,9 +859,17 @@ var Link = function (_React$PureComponent) {
         key: 'transition',
         value: function transition(event) {
             event.preventDefault();
-            _History2.default.push({
-                pathname: event.currentTarget.pathname
-            });
+            event.persist();
+            var newpathname = event.currentTarget.pathname;
+            document.body.classList.toggle('menu-transition-out');
+            document.body.classList.toggle('menu-transition-in');
+            setTimeout(function () {
+                document.body.classList.toggle('menu-transition-in');
+                document.body.classList.toggle('menu-transition-out');
+                _History2.default.push({
+                    pathname: newpathname
+                });
+            }, 400);
         }
     }, {
         key: 'render',
@@ -884,7 +896,7 @@ exports.default = Link;
 /* 31 */
 /***/ (function(module, exports) {
 
-module.exports = {"phone":" 07886 407274","email":"heather@bodypoise.co.uk","emailSubject":"General Enquiry","copyright":"@2018 Body Poise. All Reserved.","callToAction":"Contact me to discuss your personalised plan.","strapline":"Physio-led Pilates and more"}
+module.exports = {"phone":" 07886 407274","email":"heather@bodypoise.co.uk","emailSubject":"General Enquiry","copyright":"@2018 Body Poise. All Reserved.","callToAction":"Contact me to discuss your personalised plan.","strapline":"Restoring balance for bodies, regaining composure for life."}
 
 /***/ }),
 /* 32 */
@@ -2222,11 +2234,11 @@ var _HomePage = __webpack_require__(74);
 
 var _HomePage2 = _interopRequireDefault(_HomePage);
 
-var _AboutMePage = __webpack_require__(118);
+var _AboutMePage = __webpack_require__(121);
 
 var _AboutMePage2 = _interopRequireDefault(_AboutMePage);
 
-var _ContactPage = __webpack_require__(119);
+var _ContactPage = __webpack_require__(122);
 
 var _ContactPage2 = _interopRequireDefault(_ContactPage);
 
@@ -2267,19 +2279,15 @@ var _Layout = __webpack_require__(13);
 
 var _Layout2 = _interopRequireDefault(_Layout);
 
-var _About = __webpack_require__(99);
+var _About = __webpack_require__(102);
 
 var _About2 = _interopRequireDefault(_About);
 
-var _Services = __webpack_require__(103);
+var _Services = __webpack_require__(106);
 
 var _Services2 = _interopRequireDefault(_Services);
 
-var _Declaration = __webpack_require__(106);
-
-var _Declaration2 = _interopRequireDefault(_Declaration);
-
-var _Features = __webpack_require__(109);
+var _Features = __webpack_require__(112);
 
 var _Features2 = _interopRequireDefault(_Features);
 
@@ -2295,19 +2303,15 @@ var _global = __webpack_require__(31);
 
 var _global2 = _interopRequireDefault(_global);
 
-var _benefits = __webpack_require__(112);
+var _benefits = __webpack_require__(115);
 
 var _benefits2 = _interopRequireDefault(_benefits);
 
-var _services = __webpack_require__(113);
+var _services = __webpack_require__(116);
 
 var _services2 = _interopRequireDefault(_services);
 
-var _declaration = __webpack_require__(114);
-
-var _declaration2 = _interopRequireDefault(_declaration);
-
-var _CallToAction = __webpack_require__(115);
+var _CallToAction = __webpack_require__(118);
 
 var _CallToAction2 = _interopRequireDefault(_CallToAction);
 
@@ -2325,7 +2329,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // styles
 
 
-// reversable style
+// reversible style
 
 // TODO
 // import Slider from '../components/Slider.jsx';
@@ -2350,9 +2354,7 @@ var HomePage = function (_React$Component) {
                 { active: 'Home' },
                 _react2.default.createElement(_Features2.default, { title: _services2.default.title,
                     description: _services2.default.description,
-                    classes: 'section-color',
                     features: _services2.default.features }),
-                _react2.default.createElement(_Declaration2.default, { heading: _declaration2.default.heading, text: _declaration2.default.text }),
                 _react2.default.createElement(_Features2.default, { title: _benefits2.default.title,
                     description: _benefits2.default.description,
                     classes: 'section-color',
@@ -2433,163 +2435,8 @@ exports.default = EmailLink;
 /* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
 
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ComponentWithChildren = __webpack_require__(77);
-
-var _ComponentWithChildren2 = _interopRequireDefault(_ComponentWithChildren);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-__webpack_require__(78);
-
-var Header = function (_ComponentWithChildre) {
-    _inherits(Header, _ComponentWithChildre);
-
-    function Header(props) {
-        _classCallCheck(this, Header);
-
-        return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, props));
-    }
-
-    _createClass(Header, [{
-        key: 'render',
-        value: function render() {
-            var children = this.props.children;
-
-
-            var telComponent = this.getChildOfType("PhoneLink");
-            var emailComponent = this.getChildOfType("EmailLink");
-            var imageComponent = this.getChildOfType("ImageLink");
-            var text = this.getChildOfType("Link");
-            return _react2.default.createElement(
-                'div',
-                { className: 'header' },
-                _react2.default.createElement(
-                    'div',
-                    { className: 'container' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'row' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'col-md-4 header-logo' },
-                            imageComponent,
-                            ' ',
-                            text
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'col-md-8 header-text' },
-                            _react2.default.createElement(
-                                'span',
-                                { className: 'text-call' },
-                                telComponent
-                            ),
-                            _react2.default.createElement(
-                                'span',
-                                { className: 'text-email' },
-                                emailComponent
-                            )
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Header;
-}(_ComponentWithChildren2.default);
-
-exports.default = Header;
-
-/***/ }),
-/* 77 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ComponentWithChildren = function (_React$PureComponent) {
-    _inherits(ComponentWithChildren, _React$PureComponent);
-
-    function ComponentWithChildren(props) {
-        _classCallCheck(this, ComponentWithChildren);
-
-        return _possibleConstructorReturn(this, (ComponentWithChildren.__proto__ || Object.getPrototypeOf(ComponentWithChildren)).call(this, props));
-    }
-
-    _createClass(ComponentWithChildren, [{
-        key: "isChildTypeName",
-        value: function isChildTypeName(element, typeName) {
-            return element && element.type && element.type.name === typeName;
-        }
-    }, {
-        key: "getChildOfType",
-        value: function getChildOfType(typeName) {
-            var _this2 = this;
-
-            var children = this.props.children;
-
-            if (children) {
-                if (Array.isArray(children)) {
-                    return children.find(function (child) {
-                        return _this2.isChildTypeName(child, typeName);
-                    });
-                } else {
-                    return this.isChildTypeName(children, typeName) ? children : "";
-                }
-            }
-            return "";
-        }
-    }]);
-
-    return ComponentWithChildren;
-}(_react2.default.PureComponent);
-
-exports.default = ComponentWithChildren;
-
-/***/ }),
-/* 78 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(79);
+var content = __webpack_require__(77);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -2608,8 +2455,8 @@ var update = __webpack_require__(4)(content, options);
 if(content.locals) module.exports = content.locals;
 
 if(false) {
-	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./header.css", function() {
-		var newContent = require("!!../../../../node_modules/css-loader/index.js!./header.css");
+	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./link.css", function() {
+		var newContent = require("!!../../../../node_modules/css-loader/index.js!./link.css");
 
 		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 
@@ -2635,7 +2482,7 @@ if(false) {
 }
 
 /***/ }),
-/* 79 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -2643,13 +2490,13 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, ".header{padding-top: 40px; padding-bottom: 40px;color: #1f7b76;}\n.header-logo h1{\n    padding-top: 14px;\n    color: #1f7b76; \n}\n.header-text{\n    padding-top: 14px;\n    font-size: 14px;\n    font-weight: 600;text-align: right;\n}\n\n.text-call, .text-email, .text-hours{padding-right: 20px;}\n\n.text-call{}\n.text-email{}\n.text-hours{}\n\n@media only screen and (max-width: 768px) {\n\t.header{padding-top: 20px; padding-bottom: 20px;}\n\t .header-logo{text-align: center;margin-bottom: 10px;}\n\t .text-hours{display: none;}\n}\n", ""]);
+exports.push([module.i, "@keyframes transitionout {\n    0% {opacity: 1}\n    100% {opacity: .1}\n}\n\n@keyframes transitionin {\n    0% {opacity: 0}\n    100% {opacity: 1}\n}\n\nbody.menu-transition-out {\n    animation-name: transitionout;\n    animation-duration: 0.4s;\n}\n\nbody.menu-transition-in {\n    animation-name: transitionin;\n    animation-duration: 0.5s;\n}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 80 */
+/* 78 */
 /***/ (function(module, exports) {
 
 
@@ -2744,7 +2591,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 81 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2760,7 +2607,234 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(82);
+var _ComponentWithChildren = __webpack_require__(80);
+
+var _ComponentWithChildren2 = _interopRequireDefault(_ComponentWithChildren);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+__webpack_require__(81);
+
+var Header = function (_ComponentWithChildre) {
+    _inherits(Header, _ComponentWithChildre);
+
+    function Header(props) {
+        _classCallCheck(this, Header);
+
+        return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, props));
+    }
+
+    _createClass(Header, [{
+        key: 'render',
+        value: function render() {
+            var children = this.props.children;
+
+
+            var telComponent = this.getChildOfType("PhoneLink");
+            var emailComponent = this.getChildOfType("EmailLink");
+            var imageComponent = this.getChildOfType("ImageLink");
+            var text = this.getChildOfType("Link");
+            return _react2.default.createElement(
+                'div',
+                { className: 'header' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'container' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'row' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-8 header-logo' },
+                            imageComponent,
+                            ' ',
+                            text
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-2 header-text' },
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'text-call' },
+                                telComponent
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-2 header-text' },
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'text-email' },
+                                emailComponent
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Header;
+}(_ComponentWithChildren2.default);
+
+exports.default = Header;
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ComponentWithChildren = function (_React$PureComponent) {
+    _inherits(ComponentWithChildren, _React$PureComponent);
+
+    function ComponentWithChildren(props) {
+        _classCallCheck(this, ComponentWithChildren);
+
+        return _possibleConstructorReturn(this, (ComponentWithChildren.__proto__ || Object.getPrototypeOf(ComponentWithChildren)).call(this, props));
+    }
+
+    _createClass(ComponentWithChildren, [{
+        key: "isChildTypeName",
+        value: function isChildTypeName(element, typeName) {
+            return element && element.type && element.type.name === typeName;
+        }
+    }, {
+        key: "getChildOfType",
+        value: function getChildOfType(typeName) {
+            var _this2 = this;
+
+            var children = this.props.children;
+
+            if (children) {
+                if (Array.isArray(children)) {
+                    return children.find(function (child) {
+                        return _this2.isChildTypeName(child, typeName);
+                    });
+                } else {
+                    return this.isChildTypeName(children, typeName) ? children : "";
+                }
+            }
+            return "";
+        }
+    }]);
+
+    return ComponentWithChildren;
+}(_react2.default.PureComponent);
+
+exports.default = ComponentWithChildren;
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(82);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(4)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./header.css", function() {
+		var newContent = require("!!../../../../node_modules/css-loader/index.js!./header.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".header{padding-top: 40px; padding-bottom: 40px;color: #1f7b76;}\n.header-logo h1{\n    padding-top: 14px;\n    color: #1f7b76; \n}\n.header-text{\n    padding-top: 14px;\n    font-size: 14px;\n    font-weight: 600;text-align: right;\n}\n\n.text-call, .text-email, .text-hours{padding-right: 20px;}\n\n.text-call{}\n.text-email{}\n.text-hours{}\n\n@media only screen and (max-width: 768px) {\n\t.header{padding-top: 20px; padding-bottom: 20px;}\n\t .header-logo{text-align: center;margin-bottom: 10px;}\n\t .text-hours{display: none;}\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(84);
+
+var _menu = __webpack_require__(86);
+
+var _menu2 = _interopRequireDefault(_menu);
 
 var _Link = __webpack_require__(30);
 
@@ -2780,18 +2854,37 @@ var Navigation = function (_React$PureComponent) {
     function Navigation(props) {
         _classCallCheck(this, Navigation);
 
-        var _this = _possibleConstructorReturn(this, (Navigation.__proto__ || Object.getPrototypeOf(Navigation)).call(this, props));
-
-        _this.state = {
-            context: props.context
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (Navigation.__proto__ || Object.getPrototypeOf(Navigation)).call(this, props));
     }
 
     _createClass(Navigation, [{
+        key: 'componentWillUpdate',
+        value: function componentWillUpdate() {
+            document.body.classList.toggle('menutransition');
+        }
+    }, {
         key: 'render',
         value: function render() {
             var active = this.props.active;
+
+            var menuItems = _menu2.default.items.map(function (item) {
+                var thisactive;
+                item.title === active ? thisactive = "active" : thisactive = "";
+                return _react2.default.createElement(
+                    'li',
+                    { key: item.id, className: thisactive },
+                    _react2.default.createElement(
+                        _Link2.default,
+                        { href: item.href, title: item.title },
+                        item.text
+                    )
+                );
+                return _react2.default.createElement(
+                    'li',
+                    null,
+                    item.title
+                );
+            });
 
             return _react2.default.createElement(
                 'div',
@@ -2811,33 +2904,7 @@ var Navigation = function (_React$PureComponent) {
                                 _react2.default.createElement(
                                     'ul',
                                     null,
-                                    _react2.default.createElement(
-                                        'li',
-                                        { className: 'active' },
-                                        _react2.default.createElement(
-                                            _Link2.default,
-                                            { href: '/', title: 'Home' },
-                                            'Home'
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        'li',
-                                        { className: 'active' },
-                                        _react2.default.createElement(
-                                            _Link2.default,
-                                            { href: '/about', title: 'About Me' },
-                                            'About Me'
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        'li',
-                                        { className: 'active' },
-                                        _react2.default.createElement(
-                                            _Link2.default,
-                                            { href: 'contact', title: 'Contact' },
-                                            'Contact Me'
-                                        )
-                                    )
+                                    menuItems
                                 )
                             )
                         )
@@ -2853,11 +2920,11 @@ var Navigation = function (_React$PureComponent) {
 exports.default = Navigation;
 
 /***/ }),
-/* 82 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(83);
+var content = __webpack_require__(85);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -2903,7 +2970,7 @@ if(false) {
 }
 
 /***/ }),
-/* 83 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -2911,13 +2978,19 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, ".navigation{background-color: #1f7b76;border-bottom: 4px solid #74b281; position: relative;z-index: 9;}\n#navigation,\n#navigation ul,\n#navigation ul li,\n#navigation ul li a,\n#navigation #menu-button {margin: 0; padding: 0; border: 0; list-style: none; line-height: 1; display: block;\n  position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}\n#navigation:after,\n#navigation > ul:after {content: \".\"; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}\n#navigation #menu-button {display: none;}\n#navigation {}\n#navigation > ul > li {float: left;}\n#navigation.align-center > ul {font-size: 0; text-align: center;}\n#navigation.align-center > ul > li {display: inline-block; float: none;}\n#navigation.align-center ul ul {text-align: left;}\n#navigation.align-right > ul > li {float: right;}\n#navigation > ul > li > a {padding: 20px 10px 20px 30px; font-size: 13px; letter-spacing: 1px; text-decoration: none;\n  color: #b5d1cf; font-weight: 600; text-transform: uppercase; border-left: 1px solid #186d68; \n  border-right: 1px solid #186d68; margin-right: -1px;}\n#navigation > ul > li:hover > a {color: #ffffff;background-color: #74b281;}\n#navigation > ul > li.active > a {background-color: #74b281; color: #ffffff;}\n#navigation > ul > li.has-sub > a {padding-right: 50px;}\n#navigation > ul > li.has-sub > a:after {position: absolute; top: 19px; right: 30px; display: block; content: '\\F107';\n  font: normal normal normal 14px/1 FontAwesome;}\n/*#navigation > ul > li.has-sub > a:before {position: absolute; top: 21px; right: 33px; display: block; width: 2px;\n  height: 8px; background: #dddddd; content: ''; -webkit-transition: all .25s ease; -moz-transition: all .25s ease;\n  -ms-transition: all .25s ease; -o-transition: all .25s ease; transition: all .25s ease;}*/\n#navigation > ul > li.has-sub:hover > a:before {top: 23px; height: 0;}\n#navigation ul ul {position: absolute; left: -9999px;} \n#navigation.align-right ul ul {text-align: right;}\n#navigation ul ul li {height: 0; -webkit-transition: all .25s ease; -moz-transition: all .25s ease; \n  -ms-transition: all .25s ease; -o-transition: all .25s ease; transition: all .25s ease; }\n#navigation li:hover > ul {left: auto; }\n#navigation.align-right li:hover > ul {left: auto; right: 0; }\n#navigation li:hover > ul > li {height: 51px;}\n#navigation ul ul ul {margin-left: 100%; top: 0;}\n#navigation.align-right ul ul ul {margin-left: 0; margin-right: 100%; }\n#navigation ul ul li a {padding: 18px 15px; width: 220px; font-size: 14px; text-decoration: none; color: #bee4c6;\n  font-weight: 500; background: #74b281; border-bottom: 1px solid #549661; }\n#navigation ul ul li:last-child > a, #navigation ul ul li.last-item > a {border-bottom: 0;}\n#navigation ul ul li:hover > a, #navigation ul ul li a:hover {color: #ffffff;}\n#navigation ul ul li.has-sub > a:after {position: absolute; top: 16px; right: 11px; width: 8px; height: 2px; display: block;\n  content: '\\F105'; font: normal normal normal 14px/1 FontAwesome;}\n#navigation.align-right ul ul li.has-sub > a:after {right: auto; left: 11px;}\n/*#navigation ul ul li.has-sub > a:before {position: absolute; top: 13px; right: 14px; display: block; width: 2px;\n  height: 8px; background: #dddddd; content: ''; -webkit-transition: all .25s ease; -moz-transition: all .25s ease;\n  -ms-transition: all .25s ease; -o-transition: all .25s ease; transition: all .25s ease; }*/\n#navigation.align-right ul ul li.has-sub > a:before {right: auto; left: 14px;}\n#navigation ul ul > li.has-sub:hover > a:before {top: 17px; height: 0;}\n@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) \nand (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen \nand (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) \nand (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen \nand (min-resolution: 2dppx) and (max-width: 1024px) {\n  #navigation {width: 100%;}\n  #navigation ul {width: 100%; display: none;}\n  #navigation.align-center > ul {text-align: left;}\n  #navigation ul li {width: 100%; border-top: 1px solid #186d68;}\n  #navigation ul ul li, #navigation li:hover > ul > li {height: auto;}\n  #navigation ul li a, #navigation ul ul li a {width: 100%; border-bottom: 0;}\n  #navigation > ul > li {float: none;}\n  #navigation ul ul li a {padding-left: 55px;}\n  #navigation ul ul ul li a {padding-left: 35px;}\n  #navigation ul ul li a {color: #dddddd; background: none;}\n  #navigation ul ul li:hover > a, #navigation ul ul li.active > a {color: #ffffff;}\n  #navigation ul ul, #navigation ul ul ul, #navigation.align-right ul ul {position: relative; left: 0; width: 100%;\n    margin: 0; text-align: left;}\n  #navigation > ul > li.has-sub > a:after, #navigation > ul > li.has-sub > a:before, #navigation ul ul > li.has-sub > a:after,\n  #navigation ul ul > li.has-sub > a:before {display: none;}\n  #navigation #menu-button {display: block; padding: 17px; color: #83bc90; cursor: pointer; font-size: 12px; \n    text-transform: uppercase; font-weight: 700;}\n  #navigation #menu-button:after {\n    position: absolute;\n    top: 22px;\n    right: 17px;\n    display: block;\n    height: 8px;\n    width: 20px;\n    border-top: 2px solid #83bc90;\n    border-bottom: 2px solid #83bc90;\n    content: '';\n  }\n  #navigation #menu-button:before {\n    position: absolute;\n    top: 16px;\n    right: 17px;\n    display: block;\n    height: 2px;\n    width: 20px;\n    background: #83bc90;\n    content: '';\n  }\n  #navigation #menu-button.menu-opened:after {\n    top: 23px;\n    border: 0;\n    height: 2px;\n    width: 15px;\n    background: #ffffff;\n    -webkit-transform: rotate(45deg);\n    -moz-transform: rotate(45deg);\n    -ms-transform: rotate(45deg);\n    -o-transform: rotate(45deg);\n    transform: rotate(45deg);\n  }\n  #navigation #menu-button.menu-opened:before {\n    top: 23px;\n    background: #ffffff;\n    width: 15px;\n    -webkit-transform: rotate(-45deg);\n    -moz-transform: rotate(-45deg);\n    -ms-transform: rotate(-45deg);\n    -o-transform: rotate(-45deg);\n    transform: rotate(-45deg);\n  }\n  #navigation .submenu-button {\n    position: absolute;\n    z-index: 99;\n    right: 0;\n    top: 0;\n    display: block;\n    border-left: 1px solid #186d68;\n    height: 53px;\n    width: 53px;\n    cursor: pointer;\n  }\n  #navigation .submenu-button.submenu-opened {\n    background: #186d68;\n  }\n  #navigation ul ul .submenu-button {\n    height: 34px;\n    width: 34px;\n  }\n  #navigation .submenu-button:after {\n    position: absolute;\n    top: 25px;\n    right: 22px;\n    width: 8px;\n    height: 2px;\n    display: block;\n    background: #dddddd;\n    content: '';\n  }\n  #navigation ul ul .submenu-button:after {\n    top: 15px;\n    right: 13px;\n  }\n  #navigation .submenu-button.submenu-opened:after {\n    background: #ffffff;\n  }\n  #navigation .submenu-button:before {\n    position: absolute;\n    top: 22px;\n    right: 25px;\n    display: block;\n    width: 2px;\n    height: 8px;\n    background: #dddddd;\n    content: '';\n  }\n  #navigation ul ul .submenu-button:before {\n    top: 12px;\n    right: 16px;\n  }\n  #navigation .submenu-button.submenu-opened:before {\n    display: none;\n  }\n}\n\n@media only screen and (max-width: 768px) {\n    #navigation > ul > li > a {\n        padding: 20px 10px 20px 30px;\n    }\n   font-size: 13px;\n   letter-spacing: 1px;\n   text-decoration: none;\n   color: #b5d1cf;\n   font-weight: 600;\n   text-transform: uppercase;\n   border-left: 1px solid transparent;\n   border-right: 1px solid transparent;\n   margin-right: -1px;\n}", ""]);
+exports.push([module.i, ".navigation{background-color: #1f7b76;border-bottom: 4px solid #74b281; position: relative;z-index: 9;}\n#navigation,\n#navigation ul,\n#navigation ul li,\n#navigation ul li a,\n#navigation #menu-button {margin: 0; padding: 0; border: 0; list-style: none; line-height: 1; display: block;\n  position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}\n#navigation:after,\n#navigation > ul:after {content: \".\"; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}\n#navigation > ul > li {float: left;} /* make the menu items line up in a row */\n#navigation.align-center ul ul {text-align: left;}\n#navigation.align-right > ul > li {float: right;}\n#navigation > ul > li > a {padding: 20px 30px 20px 30px; font-size: 13px; letter-spacing: 1px; text-decoration: none;\n  color: #b5d1cf; font-weight: 600; text-transform: uppercase; border-left: 1px solid #186d68; \n  border-right: 1px solid #186d68; margin-right: -1px;}\n#navigation > ul > li:hover > a {color: #ffffff;background-color: #74b281;}\n#navigation > ul > li.active > a {background-color: #74b281; color: #ffffff;}\n#navigation > ul > li.has-sub > a {padding-right: 50px;}\n#navigation > ul > li.has-sub > a:after {position: absolute; top: 19px; right: 30px; display: block; content: '\\F107';\n  font: normal normal normal 14px/1 FontAwesome;}\n#navigation > ul > li.has-sub:hover > a:before {top: 23px; height: 0;}\n#navigation ul ul {position: absolute; left: -9999px;} \n#navigation.align-right ul ul {text-align: right;}\n#navigation ul ul li {height: 0; -webkit-transition: all .25s ease; -moz-transition: all .25s ease; \n  -ms-transition: all .25s ease; -o-transition: all .25s ease; transition: all .25s ease; }\n#navigation li:hover > ul {left: auto; }\n#navigation.align-right li:hover > ul {left: auto; right: 0; }\n#navigation li:hover > ul > li {height: 51px;}\n#navigation ul ul ul {margin-left: 100%; top: 0;}\n#navigation.align-right ul ul ul {margin-left: 0; margin-right: 100%; }\n#navigation ul ul li a {padding: 18px 15px; width: 220px; font-size: 14px; text-decoration: none; color: #bee4c6;\n  font-weight: 500; background: #74b281; border-bottom: 1px solid #549661; }\n#navigation ul ul li:last-child > a, #navigation ul ul li.last-item > a {border-bottom: 0;}\n#navigation ul ul li:hover > a, #navigation ul ul li a:hover {color: #ffffff;}\n#navigation ul ul li.has-sub > a:after {position: absolute; top: 16px; right: 11px; width: 8px; height: 2px; display: block;\n  content: '\\F105'; font: normal normal normal 14px/1 FontAwesome;}\n#navigation.align-right ul ul li.has-sub > a:after {right: auto; left: 11px;}\n#navigation.align-right ul ul li.has-sub > a:before {right: auto; left: 14px;}\n#navigation ul ul > li.has-sub:hover > a:before {top: 17px; height: 0;}\n\n/* BUG ISSUES WITH THIS WIDTH */\n@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) \nand (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen \nand (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) \nand (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen \nand (min-resolution: 2dppx) and (max-width: 1024px) {\n  #navigation {width: 100%;}\n  #navigation ul {width: 100%; display: none;}\n  #navigation.align-center > ul {text-align: left;}\n  #navigation ul li {width: 100%; border-top: 1px solid #186d68;}\n  #navigation ul ul li, #navigation li:hover > ul > li {height: auto;}\n  #navigation ul li a, #navigation ul ul li a {width: 100%; border-bottom: 0;}\n  #navigation > ul > li {float: none;}\n  #navigation ul ul li a {padding-left: 55px;}\n  #navigation ul ul ul li a {padding-left: 35px;}\n  #navigation ul ul li a {color: #dddddd; background: none;}\n  #navigation ul ul li:hover > a, #navigation ul ul li.active > a {color: #ffffff;}\n  #navigation ul ul, #navigation ul ul ul, #navigation.align-right ul ul {position: relative; left: 0; width: 100%;\n    margin: 0; text-align: left;}\n  #navigation > ul > li.has-sub > a:after, #navigation > ul > li.has-sub > a:before, #navigation ul ul > li.has-sub > a:after,\n  #navigation ul ul > li.has-sub > a:before {display: none;}\n  #navigation #menu-button {display: block; padding: 17px; color: #83bc90; cursor: pointer; font-size: 12px; \n    text-transform: uppercase; font-weight: 700;}\n  #navigation #menu-button:after {\n    position: absolute;\n    top: 22px;\n    right: 17px;\n    display: block;\n    height: 8px;\n    width: 20px;\n    border-top: 2px solid #83bc90;\n    border-bottom: 2px solid #83bc90;\n    content: '';\n  }\n  #navigation #menu-button:before {\n    position: absolute;\n    top: 16px;\n    right: 17px;\n    display: block;\n    height: 2px;\n    width: 20px;\n    background: #83bc90;\n    content: '';\n  }\n  #navigation #menu-button.menu-opened:after {\n    top: 23px;\n    border: 0;\n    height: 2px;\n    width: 15px;\n    background: #ffffff;\n    -webkit-transform: rotate(45deg);\n    -moz-transform: rotate(45deg);\n    -ms-transform: rotate(45deg);\n    -o-transform: rotate(45deg);\n    transform: rotate(45deg);\n  }\n  #navigation #menu-button.menu-opened:before {\n    top: 23px;\n    background: #ffffff;\n    width: 15px;\n    -webkit-transform: rotate(-45deg);\n    -moz-transform: rotate(-45deg);\n    -ms-transform: rotate(-45deg);\n    -o-transform: rotate(-45deg);\n    transform: rotate(-45deg);\n  }\n  #navigation .submenu-button {\n    position: absolute;\n    z-index: 99;\n    right: 0;\n    top: 0;\n    display: block;\n    border-left: 1px solid #186d68;\n    height: 53px;\n    width: 53px;\n    cursor: pointer;\n  }\n  #navigation .submenu-button.submenu-opened {\n    background: #186d68;\n  }\n  #navigation ul ul .submenu-button {\n    height: 34px;\n    width: 34px;\n  }\n  #navigation .submenu-button:after {\n    position: absolute;\n    top: 25px;\n    right: 22px;\n    width: 8px;\n    height: 2px;\n    display: block;\n    background: #dddddd;\n    content: '';\n  }\n  #navigation ul ul .submenu-button:after {\n    top: 15px;\n    right: 13px;\n  }\n  #navigation .submenu-button.submenu-opened:after {\n    background: #ffffff;\n  }\n  #navigation .submenu-button:before {\n    position: absolute;\n    top: 22px;\n    right: 25px;\n    display: block;\n    width: 2px;\n    height: 8px;\n    background: #dddddd;\n    content: '';\n  }\n  #navigation ul ul .submenu-button:before {\n    top: 12px;\n    right: 16px;\n  }\n  #navigation .submenu-button.submenu-opened:before {\n    display: none;\n  }\n}\n\n@media only screen and (max-width: 768px) {\n    #navigation > ul > li > a {\n        padding: 20px 10px 20px 30px;\n    }\n   font-size: 13px;\n   letter-spacing: 1px;\n   text-decoration: none;\n   color: #b5d1cf;\n   font-weight: 600;\n   text-transform: uppercase;\n   border-left: 1px solid transparent;\n   border-right: 1px solid transparent;\n   margin-right: -1px;\n}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 84 */
+/* 86 */
+/***/ (function(module, exports) {
+
+module.exports = {"items":[{"id":1,"href":"/","title":"Home","text":"Home"},{"id":2,"href":"/about","title":"About Me","text":"About Me"},{"id":3,"href":"/contact","title":"Contact","text":"Contact"}]}
+
+/***/ }),
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2933,7 +3006,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(85);
+__webpack_require__(88);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2980,11 +3053,11 @@ var Footer = function (_React$Component) {
 exports.default = Footer;
 
 /***/ }),
-/* 85 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(86);
+var content = __webpack_require__(89);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -3030,7 +3103,7 @@ if(false) {
 }
 
 /***/ }),
-/* 86 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -3044,7 +3117,7 @@ exports.push([module.i, "/*---------------- footer ---------------*/\n.footer{ba
 
 
 /***/ }),
-/* 87 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3060,7 +3133,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(88);
+__webpack_require__(91);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3114,11 +3187,11 @@ var Copyright = function (_React$Component) {
 exports.default = Copyright;
 
 /***/ }),
-/* 88 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(89);
+var content = __webpack_require__(92);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -3164,7 +3237,7 @@ if(false) {
 }
 
 /***/ }),
-/* 89 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -3178,7 +3251,7 @@ exports.push([module.i, ".tiny-footer{background-color: #252926;padding-top: 10p
 
 
 /***/ }),
-/* 90 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3194,11 +3267,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactScrollUp = __webpack_require__(91);
+var _reactScrollUp = __webpack_require__(94);
 
 var _reactScrollUp2 = _interopRequireDefault(_reactScrollUp);
 
-__webpack_require__(97);
+__webpack_require__(100);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3234,7 +3307,7 @@ var BackToTop = function (_React$PureComponent) {
 exports.default = BackToTop;
 
 /***/ }),
-/* 91 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3255,15 +3328,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(92);
+var _propTypes = __webpack_require__(95);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _tweenFunctions = __webpack_require__(95);
+var _tweenFunctions = __webpack_require__(98);
 
 var _tweenFunctions2 = _interopRequireDefault(_tweenFunctions);
 
-var _detectPassiveEvents = __webpack_require__(96);
+var _detectPassiveEvents = __webpack_require__(99);
 
 var _detectPassiveEvents2 = _interopRequireDefault(_detectPassiveEvents);
 
@@ -3455,7 +3528,7 @@ ScrollUp.propTypes = {
 
 
 /***/ }),
-/* 92 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {/**
@@ -3480,17 +3553,17 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(93)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(96)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(94)();
+  module.exports = __webpack_require__(97)();
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 93 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4040,7 +4113,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 94 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4105,7 +4178,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 95 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4361,7 +4434,7 @@ module.exports = tweenFunctions;
 
 
 /***/ }),
-/* 96 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4396,11 +4469,11 @@ detectPassiveEvents.update();
 exports.default = detectPassiveEvents;
 
 /***/ }),
-/* 97 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(98);
+var content = __webpack_require__(101);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -4446,7 +4519,7 @@ if(false) {
 }
 
 /***/ }),
-/* 98 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -4460,7 +4533,7 @@ exports.push([module.i, ".cd-top {\n    display: block; \n    height: 40px; \n  
 
 
 /***/ }),
-/* 99 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4476,7 +4549,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _AboutBlock = __webpack_require__(100);
+var _AboutBlock = __webpack_require__(103);
 
 var _AboutBlock2 = _interopRequireDefault(_AboutBlock);
 
@@ -4547,7 +4620,7 @@ var About = function (_React$PureComponent) {
 exports.default = About;
 
 /***/ }),
-/* 100 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4563,7 +4636,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(101);
+__webpack_require__(104);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4619,11 +4692,11 @@ var AboutBlock = function (_React$PureComponent) {
 exports.default = AboutBlock;
 
 /***/ }),
-/* 101 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(102);
+var content = __webpack_require__(105);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -4669,7 +4742,7 @@ if(false) {
 }
 
 /***/ }),
-/* 102 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -4683,7 +4756,7 @@ exports.push([module.i, ".about-block{padding: 100px 60px; text-align: center;}\
 
 
 /***/ }),
-/* 103 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4699,7 +4772,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(104);
+__webpack_require__(107);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4916,11 +4989,11 @@ var Services = function (_React$PureComponent) {
 exports.default = Services;
 
 /***/ }),
-/* 104 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(105);
+var content = __webpack_require__(108);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -4966,7 +5039,7 @@ if(false) {
 }
 
 /***/ }),
-/* 105 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -4980,148 +5053,10 @@ exports.push([module.i, ".service-image-block{}\n.service-img{margin-bottom: 30p
 
 
 /***/ }),
-/* 106 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-__webpack_require__(107);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Declaration = function (_React$PureComponent) {
-    _inherits(Declaration, _React$PureComponent);
-
-    function Declaration(props) {
-        _classCallCheck(this, Declaration);
-
-        return _possibleConstructorReturn(this, (Declaration.__proto__ || Object.getPrototypeOf(Declaration)).call(this, props));
-    }
-
-    _createClass(Declaration, [{
-        key: 'render',
-        value: function render() {
-            var _props = this.props,
-                heading = _props.heading,
-                text = _props.text;
-
-            return _react2.default.createElement(
-                'div',
-                { className: 'section-space' },
-                _react2.default.createElement(
-                    'div',
-                    { className: 'container' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'row' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'col-md-offset-2 col-md-8 section-title text-center' },
-                            _react2.default.createElement(
-                                'h1',
-                                null,
-                                heading
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'lead' },
-                                text
-                            )
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Declaration;
-}(_react2.default.PureComponent);
-
-exports.default = Declaration;
-
-/***/ }),
-/* 107 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(108);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(4)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./declaration.css", function() {
-		var newContent = require("!!../../../../node_modules/css-loader/index.js!./declaration.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 108 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".lead{font-size: 21px; line-height: 35px; font-weight: 400;}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 109 */
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5141,7 +5076,7 @@ var _Feature = __webpack_require__(32);
 
 var _Feature2 = _interopRequireDefault(_Feature);
 
-__webpack_require__(110);
+__webpack_require__(113);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5231,11 +5166,11 @@ var Features = function (_React$Component) {
 exports.default = Features;
 
 /***/ }),
-/* 110 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(111);
+var content = __webpack_require__(114);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -5281,7 +5216,7 @@ if(false) {
 }
 
 /***/ }),
-/* 111 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -5295,25 +5230,20 @@ exports.push([module.i, ".feature{margin-bottom: 30px;}\n.feature-icon{color: #7
 
 
 /***/ }),
-/* 112 */
+/* 115 */
 /***/ (function(module, exports) {
 
 module.exports = {"title":"Why choose me?","description":"My passion is to treat the whole person and not just the pain area. I work with you towards your goals and to develop tools to take control of your life.","features":[{"id":1,"icon":"icon-coffee-cup","title":"Quality Care","description":"Providing a friendly and professional service, I specialise in supporting those with long term conditions."},{"id":2,"icon":"icon-document","title":"Certifications","description":"I am a fully qualified physiotherapist with post graduate certification in acupuncture and a pilates instructor."},{"id":3,"icon":"icon-avatar","title":"One to One Sessions","description":"For those with special requirements, I can provide one-to-one guidance and personalised service."},{"id":4,"icon":"icon-calendar","title":"Regular Classes","description":"I run weekly pilates sessions at a convenient location. Get in contact for more information."}]}
 
 /***/ }),
-/* 113 */
+/* 116 */
 /***/ (function(module, exports) {
 
 module.exports = {"title":"Pilates for your body and mind","description":"A trained and experienced physiotherapist, I specialise in Pilates exercises for building core muscles.","features":[{"id":1,"icon":"icon-medical-records","title":"Pregnancy and post-natal Pilates","description":"I have developed exercise routines specifically aimed at pregnant women and new mothers."},{"id":2,"icon":"icon-drugs-3","title":"Pain Management","description":"Pilates can help with joint pain, chronic pain, Fibromyalgia, and sports injury."},{"id":3,"icon":"icon-like","title":"Stress management","description":"The focus and percision of movement can help with stress through relaxation and meditation."}]}
 
 /***/ }),
-/* 114 */
-/***/ (function(module, exports) {
-
-module.exports = {"heading":"Body Poise","text":"Restoring balance for bodies, regaining composure for life."}
-
-/***/ }),
-/* 115 */
+/* 117 */,
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5329,7 +5259,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(116);
+__webpack_require__(119);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5395,11 +5325,11 @@ var CallToAction = function (_React$PureComponent) {
 exports.default = CallToAction;
 
 /***/ }),
-/* 116 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(117);
+var content = __webpack_require__(120);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -5445,7 +5375,7 @@ if(false) {
 }
 
 /***/ }),
-/* 117 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -5459,7 +5389,7 @@ exports.push([module.i, ".cta-outline{border:2px solid #e9eae4; padding: 30px; b
 
 
 /***/ }),
-/* 118 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5516,7 +5446,7 @@ var AboutMePage = function (_React$Component) {
 exports.default = AboutMePage;
 
 /***/ }),
-/* 119 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5561,7 +5491,7 @@ var ContactPage = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 _Layout2.default,
-                { active: 'Home' },
+                { active: 'Contact' },
                 'Contact Me'
             );
         }

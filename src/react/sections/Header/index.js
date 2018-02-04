@@ -20,11 +20,13 @@ export default class Header extends ComponentWithChildren {
             <div className="header">
                 <div className="container">
                     <div className="row">
-                    <div className="col-md-4 header-logo">{imageComponent} {text}</div>
-                    <div className="col-md-8 header-text">
-                        <span className="text-call">{telComponent}</span>
-                        <span className="text-email">{emailComponent}</span>
-                    </div>
+                        <div className="col-md-8 header-logo">{imageComponent} {text}</div>
+                        <div className="col-md-2 header-text">
+                            <span className="text-call">{telComponent}</span>
+                        </div>
+                        <div className="col-md-2 header-text">
+                            <span className="text-email">{emailComponent}</span>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@ export default class Declaration extends React.PureComponent {
     render() {
         const {heading, text} = this.props;
         return (
-            <div className="section-space">
+            <div className="section-space section-color">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-offset-2 col-md-8 section-title text-center">
