@@ -1,4 +1,6 @@
-navigation
+Add active menu option - fix styling of navigation bar DONE
+Async slider? 
+Change phone number to allow nbsp;
 Express handling of error event
 Check how google analytics works with SPA
 Then fix all URLs routed to react page
@@ -47,3 +49,4 @@ add ssl DONE
 remap dns to aws? DONE
 Add scroll to top DONE
 webpack - copy static resources DONE
+navigation DONE

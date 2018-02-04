@@ -1,20 +1,32 @@
 import React from 'react';
 
 import './navigation.css';
+import menu from '../../data/menu.json';
 
 import Link from '../../components/Link';
 
 export default class Navigation extends React.PureComponent {
     constructor(props) {
         super(props);
+    }
 
-        this.state = {
-            context: props.context,
-        }
+    componentWillUpdate() {
+        document.body.classList.toggle('menutransition');        
     }
 
     render() {
         const {active} = this.props;
+        var menuItems = menu.items.map((item) => {
+            var thisactive;
+            item.title === active ? thisactive="active":thisactive="";
+            return (<li key={item.id} className={thisactive}>
+                <Link href={item.href} title={item.title}>{item.text}</Link>
+            </li>);
+        return (
+            <li>{item.title}</li>
+        )
+        });
+
         return (
             <div className="navigation">
                 <div className="container">
@@ -22,9 +34,7 @@ export default class Navigation extends React.PureComponent {
                         <div className="col-md-12">
                             <div id="navigation">
                             <ul>
-                                <li className="active"><Link href="/" title="Home">Home</Link></li>
-                                <li className="active"><Link href="/about" title="About Me">About Me</Link></li>
-                                <li className="active"><Link href="contact" title="Contact">Contact Me</Link></li>
+                                {menuItems}
                                 {/*
                                 <li><a href="about-us-1.html" title="About us" className="animsition-link">About</a>
                                 <ul>

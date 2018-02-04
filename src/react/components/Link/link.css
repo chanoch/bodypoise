@@ -1,0 +1,19 @@
+@keyframes transitionout {
+    0% {opacity: 1}
+    100% {opacity: .1}
+}
+
+@keyframes transitionin {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+body.menu-transition-out {
+    animation-name: transitionout;
+    animation-duration: 0.4s;
+}
+
+body.menu-transition-in {
+    animation-name: transitionin;
+    animation-duration: 0.5s;
+}

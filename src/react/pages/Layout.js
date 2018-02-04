@@ -20,14 +20,15 @@ export default class HomePage extends React.Component {
     }
 
     render() {
+        const {active} = this.props;
         return (
             <div>
                 <Header>
-                    <Link link="/"><h1>BodyPoise</h1><h2>{global.strapline}</h2></Link>
+                    <Link href="/" title="Body Poise Home"><h1>BodyPoise</h1><h3>{global.strapline}</h3></Link>
                     <EmailLink email={global.email} subject={global.emailSubject}/>
                     <PhoneLink number={global.phone} />        
                 </Header>
-                <Navigation />
+                <Navigation active={active}/>
                 {this.props.children}
                 <Footer />
                 <Copyright>{global.copyright}</Copyright>

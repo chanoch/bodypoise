@@ -10,7 +10,7 @@ export default class ContactPage extends React.Component {
 
     render() {
         return (
-            <Layout active="Home">
+            <Layout active="Contact">
                 Contact Me
             </Layout>
         )
