@@ -5,9 +5,19 @@ import menu from '../../data/menu.json';
 
 import Link from '../../components/Link';
 
-export default class Navigation extends React.PureComponent {
+export default class Navigation extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            open: false,
+        }
+        this.toggleMenu = this.toggleMenu.bind(this);
+    }
+
+    toggleMenu() {
+        this.setState({
+            open: !this.state.open
+        });
     }
 
     componentWillUpdate() {
@@ -16,6 +26,9 @@ export default class Navigation extends React.PureComponent {
 
     render() {
         const {active} = this.props;
+        const menuButtonClasses = this.state.open?"menu-opened":"";
+        const listClasses = this.state.open?"open":"";
+
         var menuItems = menu.items.map((item) => {
             var thisactive;
             item.title === active ? thisactive="active":thisactive="";
@@ -33,7 +46,8 @@ export default class Navigation extends React.PureComponent {
                     <div className="row">
                         <div className="col-md-12">
                             <div id="navigation">
-                            <ul>
+                            <div id="menu-button" className={menuButtonClasses} onClick={this.toggleMenu}>Menu</div>
+                            <ul className={listClasses}>
                                 {menuItems}
                                 {/*
                                 <li><a href="about-us-1.html" title="About us" className="animsition-link">About</a>

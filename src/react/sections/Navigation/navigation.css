@@ -7,7 +7,11 @@
   position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
 #navigation:after,
 #navigation > ul:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
-#navigation > ul > li {float: left;} /* make the menu items line up in a row */
+#navigation #menu-button {display: none;}
+#navigation {}
+#navigation > ul > li {float: left;}
+#navigation.align-center > ul {font-size: 0; text-align: center;}
+#navigation.align-center > ul > li {display: inline-block; float: none;}
 #navigation.align-center ul ul {text-align: left;}
 #navigation.align-right > ul > li {float: right;}
 #navigation > ul > li > a {padding: 20px 30px 20px 30px; font-size: 13px; letter-spacing: 1px; text-decoration: none;
@@ -46,6 +50,7 @@ and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width
 and (min-resolution: 2dppx) and (max-width: 1024px) {
   #navigation {width: 100%;}
   #navigation ul {width: 100%; display: none;}
+  #navigation ul.open {display: block;}
   #navigation.align-center > ul {text-align: left;}
   #navigation ul li {width: 100%; border-top: 1px solid #186d68;}
   #navigation ul ul li, #navigation li:hover > ul > li {height: auto;}
