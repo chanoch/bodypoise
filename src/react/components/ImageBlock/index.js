@@ -9,7 +9,7 @@ export default class ImageBlock extends React.Component {
     render() {
         const {img, alttext} = this.props;
         return (
-            <div className="col-md-6"><img src={img} alt={alttext} className="img-responsive" /></div>
+            <div className="col-md-6"><img src={img} alt={alttext} className="img-fluid" /></div>
           )
     }
 }

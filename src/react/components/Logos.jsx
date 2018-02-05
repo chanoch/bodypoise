@@ -15,12 +15,12 @@ export default class Logos extends React.PureComponent {
       </div>
     </div>
     <div className="row">
-      <div className="col-md-2 insurance-logo"><a href="#"><img src="images/insurance-logo-1.png" className="img-responsive" alt="" /></a></div>
-      <div className="col-md-2 insurance-logo"><a href="#"><img src="images/insurance-logo-2.png" className="img-responsive" alt="" /></a></div>
-      <div className="col-md-2 insurance-logo"><a href="#"><img src="images/insurance-logo-3.png" className="img-responsive" alt="" /></a></div>
-      <div className="col-md-2 insurance-logo"><a href="#"><img src="images/insurance-logo-4.png" className="img-responsive" alt="" /></a></div>
-      <div className="col-md-2 insurance-logo"><a href="#"><img src="images/insurance-logo-1.png" className="img-responsive" alt="" /></a></div>
-      <div className="col-md-2 insurance-logo"><a href="#"><img src="images/insurance-logo-2.png" className="img-responsive" alt="" /></a></div>
+      <div className="col-md-2 insurance-logo"><a href="#"><img src="images/insurance-logo-1.png" className="img-fluid" alt="" /></a></div>
+      <div className="col-md-2 insurance-logo"><a href="#"><img src="images/insurance-logo-2.png" className="img-fluid" alt="" /></a></div>
+      <div className="col-md-2 insurance-logo"><a href="#"><img src="images/insurance-logo-3.png" className="img-fluid" alt="" /></a></div>
+      <div className="col-md-2 insurance-logo"><a href="#"><img src="images/insurance-logo-4.png" className="img-fluid" alt="" /></a></div>
+      <div className="col-md-2 insurance-logo"><a href="#"><img src="images/insurance-logo-1.png" className="img-fluid" alt="" /></a></div>
+      <div className="col-md-2 insurance-logo"><a href="#"><img src="images/insurance-logo-2.png" className="img-fluid" alt="" /></a></div>
     </div>
   </div>
 </div>

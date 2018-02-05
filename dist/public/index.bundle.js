@@ -3107,7 +3107,7 @@ exports.push([module.i, ".navigation{background-color: #1f7b76;border-bottom: 4p
 /* 88 */
 /***/ (function(module, exports) {
 
-module.exports = {"items":[{"id":1,"href":"/","title":"Home","text":"Home"},{"id":2,"href":"/about","title":"About Me","text":"About Me"}]}
+module.exports = {"items":[{"id":1,"href":"/","title":"Home","text":"Home"},{"id":2,"href":"/about","title":"About Me","text":"About Me"},{"id":3,"href":"/contact","title":"Contact","text":"Contact"}]}
 
 /***/ }),
 /* 89 */
@@ -5310,7 +5310,7 @@ var ImageBlock = function (_React$Component) {
             return _react2.default.createElement(
                 "div",
                 { className: "col-md-6" },
-                _react2.default.createElement("img", { src: img, alt: alttext, className: "img-responsive" })
+                _react2.default.createElement("img", { src: img, alt: alttext, className: "img-fluid" })
             );
         }
     }]);

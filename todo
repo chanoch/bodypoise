@@ -1,5 +1,13 @@
+fix mobile menu
+fix heather image in mobile view
+Services page
+uglify js
+
 Add contact page
-RELEASE
+What is Pilates page
+footer content
+add in address for hazelwell centre
+
 Change phone number to allow nbsp;
 Express handling of error event
 Check how google analytics works with SPA
@@ -53,3 +61,5 @@ Implement section DONE
 move teaserblock to components DONE
 add in image block DONE
 Add about me page DONE
+fix http redirect! DONE
+google content browser caching - NOT FIXABLE
