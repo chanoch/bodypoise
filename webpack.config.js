@@ -23,10 +23,12 @@ function getPlugins() {
         }
     }));
 
-    plugins.push("transform-runtime");
-
     if(isProd) {
-        plugins.push(new webpack.optimize.UglifyJsPlugin());
+        plugins.push(new webpack.optimize.UglifyJsPlugin({
+            uglifyOptions: {
+                mangle: false
+            }
+        }));
     }
     if(webpackReport) {
         plugins.push(new BundleAnalyzerPlugin({
