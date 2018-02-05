@@ -3,9 +3,52 @@ var { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var webpack = require('webpack');
 
-var noVisualization = process.env.NODE_ENV === 'production' 
+var isProd = process.env.NODE_ENV === 'production' 
         || process.argv.slice(-1)[0] == '-p'
-|| process.argv.some(arg => arg.indexOf('webpack-dev-server') >= 0);
+        || process.argv.some(arg => arg.indexOf('webpack-dev-server') >= 0);
+
+var webpackReport = process.env.WEBPACK_REPORT ==='true'; 
+
+console.log(`Environment: ${process.env.NODE_ENV}`);
+console.log(`Production Environment: ${isProd}`);
+console.log(`Generated report: ${webpackReport}`);
+
+function getPlugins() {
+    const plugins = [];
+
+    // pass env to webpack
+    plugins.push(new webpack.DefinePlugin({
+        'process.env': {
+            'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        }
+    }));
+
+    if(isProd) {
+        plugins.push(new webpack.optimize.UglifyJsPlugin());
+    }
+    if(webpackReport) {
+        plugins.push(new BundleAnalyzerPlugin({
+            analyzerMode: 'static'
+        }))
+    }
+
+    return plugins.concat([
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: Infinity
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest'
+        }),
+        new CopyWebpackPlugin([{
+            from: 'src/public',
+            to:   '../public'
+        },{
+            from: 'src/server',
+            to:   '../server'
+        }])
+    ]);
+}
 
 module.exports = {
     watch: true,
@@ -25,23 +68,5 @@ module.exports = {
             { test: /\.json$/, loader: 'json-loader' }
         ],
     },
-    plugins: [
-        // new BundleAnalyzerPlugin({
-        //     analyzerMode: 'static'
-        // }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks: Infinity
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'manifest'
-        }),
-        new CopyWebpackPlugin([{
-            from: 'src/public',
-            to:   '../public'
-        },{
-            from: 'src/server',
-            to:   '../server'
-        }])
-    ]
+    plugins: getPlugins()
 }

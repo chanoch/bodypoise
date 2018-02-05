@@ -1,6 +1,11 @@
 fix mobile menu
+use ssh for github
 Services page
-uglify js
+security scan
+accessibility
+package dist build target
+
+zip assets
 
 Add contact page
 What is Pilates page
@@ -63,3 +68,5 @@ Add about me page DONE
 fix http redirect! DONE
 google content browser caching - NOT FIXABLE
 fix heather image in mobile view DONE
+can we eliminate dev react bundles - DONE (500kb)
+uglify js - DONE (300kb)
