@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 app.use(function(req, res, next) {
   if(req.get('X-Forwarded-Proto') === 'http') {
-      res.redirect('https://' + req.get('Host') + req.url);
+      res.redirect('https://bodypoise.co.uk' + req.url);
   }
   else
       next();
