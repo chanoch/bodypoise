@@ -912,7 +912,7 @@ module.exports = function (it, tag, stat) {
 /* 35 */
 /***/ (function(module, exports) {
 
-module.exports = {"phone":" 07886 407274","email":"heather@bodypoise.co.uk","emailSubject":"General Enquiry","copyright":"@2018 Body Poise. All Reserved.","callToAction":"Contact me to discuss your personalised plan.","strapline":"Restoring balance for bodies, regaining composure for life.","locations":{"hubhazelwell":{"googlemap_link":"https://goo.gl/maps/rLicDxQB3wt","address":["318 Vicarage Road","Kings Heath","Birmingham","B14 7NH"]}}}
+module.exports = {"phone":" 07886 407274","email":"heather@bodypoise.co.uk","emailSubject":"General Enquiry","copyright":"@2018 Body Poise. All Reserved.","callToAction":"Contact me to discuss your personalised plan.","strapline":"Restoring balance for bodies, regaining composure for life.","locations":{"hubhazelwell":{"googlemap_link":"https://goo.gl/maps/rLicDxQB3wt","address":["318 Vicarage Road","Kings Heath","Birmingham","B14 7NH"],"phone":"0121 441 5500","email":"info@hubhazelwell.org.uk"}}}
 
 /***/ }),
 /* 36 */,
@@ -6653,7 +6653,7 @@ var Footer = function (_React$Component) {
                         { className: 'row' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'col-md-2 footer-widget' },
+                            { className: 'col-md-3 footer-widget' },
                             _react2.default.createElement(
                                 'h3',
                                 { className: 'footer-widget-title' },
@@ -6667,7 +6667,7 @@ var Footer = function (_React$Component) {
                         ),
                         _react2.default.createElement(
                             'div',
-                            { className: 'col-md-4 footer-widget' },
+                            { className: 'col-md-3 footer-widget' },
                             _react2.default.createElement(
                                 'h3',
                                 { className: 'footer-widget-title' },
@@ -6697,7 +6697,7 @@ var Footer = function (_React$Component) {
                         ),
                         _react2.default.createElement(
                             'div',
-                            { className: 'col-md-2 footer-widget' },
+                            { className: 'col-md-3 footer-widget' },
                             _react2.default.createElement(
                                 'h3',
                                 { className: 'footer-widget-title' },
@@ -6718,19 +6718,22 @@ var Footer = function (_React$Component) {
                                     'View Location'
                                 ),
                                 _react2.default.createElement('br', null),
-                                _global2.default.locations.hubhazelwell.address.map(function (line) {
+                                _global2.default.locations.hubhazelwell.address.map(function (line, index) {
                                     return _react2.default.createElement(
                                         'span',
-                                        null,
+                                        { key: index },
                                         line,
                                         _react2.default.createElement('br', null)
                                     );
                                 })
-                            )
+                            ),
+                            _react2.default.createElement(_EmailLink2.default, { email: _global2.default.locations.hubhazelwell.email }),
+                            _react2.default.createElement('br', null),
+                            _react2.default.createElement(_PhoneLink2.default, { number: _global2.default.locations.hubhazelwell.phone })
                         ),
                         _react2.default.createElement(
                             'div',
-                            { className: 'col-md-4 footer-widget' },
+                            { className: 'col-md-3 footer-widget' },
                             _react2.default.createElement(
                                 'h3',
                                 { className: 'footer-widget-title' },

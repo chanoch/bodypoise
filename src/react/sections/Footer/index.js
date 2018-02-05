@@ -25,14 +25,14 @@ export default class Footer extends React.Component {
             <div className="footer">
             <div className="container">
                 <div className="row">
-                <div className="col-md-2 footer-widget">
+                <div className="col-md-3 footer-widget">
                     <h3 className="footer-widget-title">Quick links</h3>
                     <ul className="listnone arrow">
                         {menuItems}
                     </ul>
                 </div>
 
-                <div className="col-md-4 footer-widget">
+                <div className="col-md-3 footer-widget">
                     <h3 className="footer-widget-title">My Details</h3>
                     <ul className="listnone">
                         <li>Stirchley, Birmingham</li>
@@ -41,19 +41,20 @@ export default class Footer extends React.Component {
                     </ul>
                 </div>
 
-                <div className="col-md-2 footer-widget">
+                <div className="col-md-3 footer-widget">
                     <h3 className="footer-widget-title">Location</h3>
                     <p>
                         <span className="footer-widget-title">The Hub Hazelwell</span><br/>
                         <a href={global.locations.hubhazelwell.googlemap_link} target="_new" className="btn-link">View Location</a><br/>
-                        {global.locations.hubhazelwell.address.map((line) => {
-                            return (<span>{line}<br/></span>);
+                        {global.locations.hubhazelwell.address.map((line, index) => {
+                            return (<span key={index}>{line}<br/></span>);
                         })}
                     </p>
-
+                    <EmailLink email={global.locations.hubhazelwell.email} /><br/>
+                    <PhoneLink number={global.locations.hubhazelwell.phone} />
                 </div>
 
-                <div className="col-md-4 footer-widget">
+                <div className="col-md-3 footer-widget">
                     <h3 className="footer-widget-title">About us</h3>
                     <p>A friendly, personalised service by a qualified physiotherapist, Pilates instructor and acupuncturist.</p>
                     <p>Heather has been operating as a Pilates instructor for over 4 years.</p>
