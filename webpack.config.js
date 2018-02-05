@@ -23,6 +23,8 @@ function getPlugins() {
         }
     }));
 
+    plugins.push("transform-runtime");
+
     if(isProd) {
         plugins.push(new webpack.optimize.UglifyJsPlugin());
     }
