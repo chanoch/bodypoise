@@ -4,5 +4,16 @@
     "emailSubject": "General Enquiry",
     "copyright": "@2018 Body Poise. All Reserved.",
     "callToAction": "Contact me to discuss your personalised plan.",
-    "strapline": "Restoring balance for bodies, regaining composure for life."
+    "strapline": "Restoring balance for bodies, regaining composure for life.",
+    "locations": {
+        "hubhazelwell": {
+            "googlemap_link": "https://goo.gl/maps/rLicDxQB3wt",
+            "address": [
+                "318 Vicarage Road",
+                "Kings Heath",
+                "Birmingham",
+                "B14 7NH"
+            ]
+        }
+    }
 } 

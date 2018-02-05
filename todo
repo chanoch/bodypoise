@@ -1,15 +1,13 @@
-use ssh for github
-Services page
+Add contact page
+add in address for hazelwell centre
+
 security scan
 accessibility
-package dist build target
+package.json dist build target
 
 zip assets (and nginx statics)
-
-Add contact page
+Services page
 What is Pilates page
-footer content
-add in address for hazelwell centre
 
 Change phone number to allow nbsp;
 Express handling of error event
@@ -22,7 +20,6 @@ remove js
  - implement css slider
 favicon
 mobile optimisation
-check redirect from 80 to 443 - compare with virtualassure
 
 logger(dev)
 create slider component with css
@@ -71,3 +68,6 @@ can we eliminate dev react bundles - DONE (500kb)
 uglify js - DONE (300kb)
 Fix production builds and mangling DONE
 fix mobile menu
+use ssh for github DONE
+check redirect from 80 to 443 - compare with virtualassure DONE
+footer content DONE
