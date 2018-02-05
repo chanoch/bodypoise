@@ -1,5 +1,4 @@
 Add contact page
-add in address for hazelwell centre
 
 security scan
 accessibility
@@ -71,3 +70,4 @@ fix mobile menu
 use ssh for github DONE
 check redirect from 80 to 443 - compare with virtualassure DONE
 footer content DONE
+add in address for hazelwell centre DONE

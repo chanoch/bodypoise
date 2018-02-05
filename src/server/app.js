@@ -9,6 +9,8 @@ var compression = require('compression');
 
 var ErrorHandler = require('express-error-handler');
 
+var index = require('./routes/index');
+
 var app = express();
 // app.use(compression);
 
@@ -29,6 +31,8 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.static(path.join(__dirname, '../public')));
+
+app.use(index);
 
 app.use('*', function(req, res) {
     res.sendFile(path.join(__dirname, '../public/index.html'));
