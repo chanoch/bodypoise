@@ -1,4 +1,3 @@
-fix mobile menu
 use ssh for github
 Services page
 security scan
@@ -71,3 +70,4 @@ fix heather image in mobile view DONE
 can we eliminate dev react bundles - DONE (500kb)
 uglify js - DONE (300kb)
 Fix production builds and mangling DONE
+fix mobile menu
