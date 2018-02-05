@@ -3,6 +3,7 @@ import React from 'react';
 import Feature from './Feature';
 
 import './feature.css';
+import '../../styles/section.css';
 
 export default class Features extends React.Component {
 
@@ -23,15 +24,18 @@ export default class Features extends React.Component {
     }
 
     render() {
-        const { title, description, classes, features} = this.props;
+        const { title, description, sectionSpace, sectionColor, features} = this.props;
         const additionalProps = this.calculateChildSizes(features);
 
         var childrenWithSize = features.map(child => {
             return Object.assign({}, child, additionalProps)
         });
-        const listClasses = "section-space " + (classes?classes:"");
+        const classes = [
+            sectionSpace?"section-space":"",
+            sectionColor?"section-color":"",
+         ].join(' ');
         return (
-            <div className={listClasses}>
+            <div className={classes}>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-offset-2 col-md-8 section-title text-center">

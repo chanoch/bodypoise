@@ -1,0 +1,26 @@
+{
+    "img": "images/heather_lge.jpg",
+    "alttext": "Photo of Heather Johnson",
+    "title": "Heather Johnson",
+    "content": [
+        {"key": 1, "text": "Heather runs Body Poise. Providing a friendly and professional service, she is a qualified physiotherapist of 16 years."},
+        {"key": 2, "text": "Having worked in various hospitals in Birmingham and in the community, she has worked with both children and adults with musculoskeletal and neurological problems."},
+        {"key": 3, "text": "In addition to physiotherapy experience, Heather has completed post graduate certification as an acupuncturist and a pilates instructor."}
+    ],
+    "mypassion": {
+        "quote": "My passion is to treat the whole person and not just the pain area. I work with you towards your goals and to develop tools to take control of your life.",
+        "author": "Heather"
+    },
+    "strengthen": {
+        "title": "Heather began Pilates when she developed knee pain.",
+        "text": "Strengthening her muscles allowed her to start running again and even complete a marathon."
+    },
+    "contactme": {
+        "quote": "I look forward to meeting you and discussing your aims and goals and how Body Poise may be able to help you achieve them.",
+        "author": "Heather Johnson"
+    },
+    "chronicsupport": {
+        "title": "Chronic care",
+        "text": "Heather specialises in support of those with long term conditions including persistent pain and weakness caused by neurological problems such as ataxia and for those needing to regain and maintain core strength."
+    }
+}

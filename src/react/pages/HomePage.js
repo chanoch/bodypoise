@@ -2,8 +2,7 @@ import React from 'react';
 
 import Layout from './Layout';
 
-import About from '../sections/About';
-import Services from '../sections/Services';
+import Section from '../sections/Section';
 import FeatureList from '../sections/Features';
 import Feature from '../sections/Features/Feature';
 
@@ -33,14 +32,13 @@ export default class HomePage extends React.Component {
 
                 <FeatureList title={services.title} 
                             description={services.description}
-                            features={services.features} />
-                {/* <Services /> */}
-
-                <FeatureList title={benefits.title} 
+                            features={services.features} 
+                            sectionSpace />
+                            
+                <FeatureList sectionSpace title={benefits.title} 
                             description={benefits.description}
-                            classes="section-color"
+                            sectionColor
                             features={benefits.features}/>
-                {/* <About /> */}
 
                 <CallToAction link={"mailto:"+global.email} buttonText="Email">
                     {global.callToAction} Ring on <PhoneLink number={global.phone} /> or

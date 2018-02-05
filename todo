@@ -1,5 +1,5 @@
-Add active menu option - fix styling of navigation bar DONE
-Async slider? 
+Add contact page
+RELEASE
 Change phone number to allow nbsp;
 Express handling of error event
 Check how google analytics works with SPA
@@ -9,19 +9,15 @@ webpack dev server? get rid of npm start in dev?
 README.md
 remove js
  - implement css slider
- - replace menu
 favicon
 mobile optimisation
-about
 check redirect from 80 to 443 - compare with virtualassure
-ga
 
 logger(dev)
 create slider component with css
+- Async slider? 
 add in other pages
 Add in remaining content
-Update menu
-contact us
 Add in editable pilates sessions
 Google ads
 Facebook ads
@@ -30,7 +26,6 @@ Story book https://github.com/storybooks/storybook
 Css with webpack https://www.bensmithett.com/smarter-css-builds-with-webpack/
 Postcss
 Strapi? https://github.com/strapi/strapi
-
 
 review webpack rules DONE
 Set up js imports DONE
@@ -50,3 +45,11 @@ remap dns to aws? DONE
 Add scroll to top DONE
 webpack - copy static resources DONE
 navigation DONE
+remove js - DONE
+Add active menu option - fix styling of navigation bar DONE
+Implement testimonial block DONE
+testimonial styles DONE
+Implement section DONE
+move teaserblock to components DONE
+add in image block DONE
+Add about me page DONE

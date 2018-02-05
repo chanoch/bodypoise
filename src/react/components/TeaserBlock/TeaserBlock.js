@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './about.css';
+import './teaser.css';
 
-export default class AboutBlock extends React.PureComponent {
+export default class TeaserBlock extends React.PureComponent {
     constructor(props) {
         super(props);
     }
@@ -10,7 +10,7 @@ export default class AboutBlock extends React.PureComponent {
     render() {
         var {title, children, link, linkText } = this.props;
         return (
-            <div className="col-md-6 about-block">
+            <div className="col-md-6 teaser-block">
                 <h2>{title}</h2>
                 <p>{children}</p>
                 <a href={link} className="btn btn-secondary">{linkText}</a> 

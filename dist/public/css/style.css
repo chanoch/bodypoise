@@ -13,7 +13,7 @@ ul li, ol li {}
 a { color: #1f7b76; text-decoration: none; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; 
 transition: all 0.3s;}
 a:focus, a:hover { text-decoration: none;color: #74b281;}
-strong{ font-weight: 600;} 
+strong{ font-weight: 600;}
 
 /*-----  button -----*/
 
@@ -52,13 +52,8 @@ position: absolute; top: 0; left: 0px;}
 p:last-child{margin-bottom: 0px;}
 ::selection {background: #ffecb3; color: #333;}
 ::-moz-selection {background: #ffecb3; color: #333;}
-.section-space{padding-top: 100px; padding-bottom: 100px;}
-.section-space-40{padding-top: 40px; padding-bottom: 40px;}
 .space-top{padding-top: 80px;}
 .space-bottom{padding-bottom: 80px;}
-.section-color{background-color: #f9faf4;}
-.section-default-bg{background-color: #74b281;}
-.section-title{margin-bottom: 60px;text-align: center;}
 .heading-title{color: #323734;}
 .heading-title-white{color: #fff;}
 
@@ -195,7 +190,6 @@ padding-bottom: 8px; margin-bottom: 20px;}
 /*--------------- Template Elements --------------*/
 .well-default{background-color: #f7f8f3; padding: 30px;}
 .blurb{border-bottom: 1px solid #eee; margin-bottom: 29px;}
-.lead{font-size: 21px; line-height: 35px; font-weight: 400;}
 
     /*----- quote -----*/
 
