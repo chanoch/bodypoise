@@ -48,6 +48,7 @@ if(process.env.NODE_ENV==='production') {
                 "https://fonts.googleapis.com",
                 "https://www.google.com",
                 "https://fonts.gstatic.com", 
+                "https://www.gstatic.com",                
 //                "'unsafe-inline'"
             ], // TODO review - triggers for form, I think
             styleSrc: [
