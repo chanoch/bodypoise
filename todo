@@ -1,6 +1,9 @@
-Add contact page
-
+fix footer links to go to top
 security scan
+ - content security policy with helmet-csp
+ - 
+
+wordpress hack quicken
 accessibility
 package.json dist build target
 
@@ -71,3 +74,4 @@ use ssh for github DONE
 check redirect from 80 to 443 - compare with virtualassure DONE
 footer content DONE
 add in address for hazelwell centre DONE
+Add contact page DONE

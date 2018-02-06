@@ -5,6 +5,15 @@ const sgMail = require('@sendgrid/mail');
 var Recaptcha = require('../components/RecaptchaMiddleware');
 var recaptcha = new Recaptcha('6LfMe0QUAAAAACovgF08FO92SAEPlaLOdKOF27tN', process.env.recaptcha_secret);
 
+router.post('/report-violation', function (req, res) {
+    if (req.body) {
+        console.log('CSP Violation: ', req.body)
+    } else {
+        console.log('CSP Violation: No data received!')
+    }
+    res.status(204).end()
+});
+
 router.post('/contact', recaptcha.middleware.verify, function(req, res, next) {
     var recaptcha_success = true;
     if(req.recaptcha.error) {

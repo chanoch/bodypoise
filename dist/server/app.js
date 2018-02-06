@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
+var csp = require('helmet-csp');
+
 var compression = require('compression');
 
 var ErrorHandler = require('express-error-handler');
@@ -23,12 +25,65 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(function(req, res, next) {
-  if(req.get('X-Forwarded-Proto') === 'http') {
-      res.redirect('https://bodypoise.co.uk' + req.url);
-  }
-  else
-      next();
+    if(req.get('X-Forwarded-Proto') === 'http') {
+        res.redirect('https://bodypoise.co.uk' + req.url);
+    }
+    else
+        next();
 });
+  
+if(process.env.NODE_ENV==='production') {
+    console.log('Setting up CSP');
+    app.use(csp({
+        directives: {
+            defaultSrc: [
+                "'self'",
+            ],
+            scriptSrc: [
+                "'self'", 
+                "https://www.googletagmanager.com",
+                "https://maxcdn.bootstrapcdn.com/",
+                "https://www.google-analytics.com",
+                "https://use.fontawesome.com",            
+                "https://fonts.googleapis.com",
+                "'unsafe-inline'"
+            ], // TODO review
+            styleSrc: [
+                "'self'",
+                "https://use.fontawesome.com",            
+                "https://fonts.googleapis.com",
+                "https://maxcdn.bootstrapcdn.com/",
+            ],
+            fontSrc: [
+                "'self'",
+                "https://use.fontawesome.com",  
+            ],
+            imgSrc: [
+                "'self'", 
+                'data:',
+                "https://www.google-analytics.com"            
+            ],
+            sandbox: ['allow-forms', 'allow-scripts'],
+            reportUri: 'https://bodypoise.co.uk/report-violation',
+            objectSrc: ["'none'"],
+            upgradeInsecureRequests: true,
+            workerSrc: false  // This is not set.
+        },
+    
+        // This module will detect common mistakes in your directives and throw errors
+        // if it finds any. To disable this, enable "loose mode".
+        loose: false,
+    
+        // Set to true if you only want browsers to report errors, not block them.
+        // You may also set this to a function(req, res) in order to decide dynamically
+        // whether to use reportOnly mode, e.g., to allow for a dynamic kill switch.
+        reportOnly: true,
+    
+        // Set to true if you want to blindly set all headers: Content-Security-Policy,
+        // X-WebKit-CSP, and X-Content-Security-Policy.
+        setAllHeaders: false,
+    }))
+}
 
 app.use(express.static(path.join(__dirname, '../public')));
 
