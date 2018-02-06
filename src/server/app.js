@@ -46,8 +46,10 @@ if(process.env.NODE_ENV==='production') {
                 "https://www.google-analytics.com",
                 "https://use.fontawesome.com",            
                 "https://fonts.googleapis.com",
-                "'unsafe-inline'"
-            ], // TODO review
+                "https://www.google.com",
+                "https://fonts.gstatic.com", 
+//                "'unsafe-inline'"
+            ], // TODO review - triggers for form, I think
             styleSrc: [
                 "'self'",
                 "https://use.fontawesome.com",            
@@ -56,7 +58,8 @@ if(process.env.NODE_ENV==='production') {
             ],
             fontSrc: [
                 "'self'",
-                "https://use.fontawesome.com",  
+                "https://use.fontawesome.com", 
+                "https://fonts.gstatic.com", 
             ],
             imgSrc: [
                 "'self'", 
@@ -77,7 +80,7 @@ if(process.env.NODE_ENV==='production') {
         // Set to true if you only want browsers to report errors, not block them.
         // You may also set this to a function(req, res) in order to decide dynamically
         // whether to use reportOnly mode, e.g., to allow for a dynamic kill switch.
-        reportOnly: true,
+        reportOnly: false,
     
         // Set to true if you want to blindly set all headers: Content-Security-Policy,
         // X-WebKit-CSP, and X-Content-Security-Policy.
