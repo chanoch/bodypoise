@@ -32,7 +32,7 @@ app.use(function(req, res, next) {
         next();
 });
   
-if(process.env.NODE_ENV==='production') {
+if(process.env.NODE_ENV==='productio') {
     console.log('Setting up CSP');
     app.use(csp({
         directives: {

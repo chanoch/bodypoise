@@ -1,13 +1,13 @@
 const path = require('path');
-var { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 var webpack = require('webpack');
 
-var isProd = process.env.NODE_ENV === 'production' 
+const isProd = process.env.NODE_ENV === 'production' 
         || process.argv.slice(-1)[0] == '-p'
         || process.argv.some(arg => arg.indexOf('webpack-dev-server') >= 0);
 
-var webpackReport = process.env.WEBPACK_REPORT ==='true'; 
+const webpackReport = process.env.WEBPACK_REPORT ==='true'; 
 
 console.log(`Environment: ${process.env.NODE_ENV}`);
 console.log(`Production Environment: ${isProd}`);
